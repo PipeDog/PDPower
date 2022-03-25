@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class PDLiveData;
 @protocol PDLifecycleOwner;
 
+#warning 按照 objC 的语法特性，这里设计成 Block 更合适，FIXIT...
 /// LiveData 的监听者协议
 @protocol PDLiveDataObserver <NSObject>
 
