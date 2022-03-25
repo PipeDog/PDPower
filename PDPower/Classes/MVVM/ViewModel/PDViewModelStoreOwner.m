@@ -24,7 +24,7 @@
 }
 
 - (UIResponder<PDViewModelStoreOwner> *)getSharedViewModelStoreOwner {
-    UIViewController *viewController = PDGetViewController(self);
+    UIViewController *viewController = PDGetRootViewController(self);
     if (!viewController) {
         [[NSException exceptionWithName:@"PDViewModelStoreOwnerException"
                                  reason:@"Can not find `UIViewConotroller` instance as `SharedViewModelStoreOwner`!"

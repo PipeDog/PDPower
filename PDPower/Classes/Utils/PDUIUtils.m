@@ -16,3 +16,16 @@ UIViewController *PDGetViewController(UIResponder *responder) {
     }
     return nil;
 }
+
+UIViewController * PDGetRootViewController(UIResponder *responder) {
+    UIViewController *controller = PDGetViewController(responder);
+    if (!controller) {
+        return nil;
+    }
+    
+    while (controller.parentViewController) {
+        controller = controller.parentViewController;
+    }
+    
+    return controller;
+}

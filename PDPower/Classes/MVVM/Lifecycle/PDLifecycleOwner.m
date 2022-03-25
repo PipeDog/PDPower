@@ -16,7 +16,7 @@
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
 - (PDLifecycle *)getLifecycle {
-    UIViewController *viewController = PDGetViewController(self);
+    UIViewController *viewController = PDGetRootViewController(self);
     if (!viewController) {
         [[NSException exceptionWithName:@"PDLifecycleOwnerException"
                                  reason:@"Can not find `UIViewConotroller` instance as `LifecycleOwner`!"
