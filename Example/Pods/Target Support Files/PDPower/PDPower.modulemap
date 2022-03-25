@@ -1,0 +1,6 @@
+framework module PDPower {
+  umbrella header "PDPower-umbrella.h"
+
+  export *
+  module * { export * }
+}
