@@ -9,8 +9,7 @@
 #import "PDLifecycleOwner.h"
 #import "PDLifecycle.h"
 #import "PDLifecycleObserver.h"
-
-static NSInteger const PDLiveDataValueStartVersion = -1;
+#import "PDLiveData+Internal.h"
 
 static id PDLiveDataDefaultValue(void) {
     static NSObject *object;
@@ -93,10 +92,8 @@ static id PDLiveDataDefaultValue(void) {
     if (existing) {
         return;
     }
-    
-    if (self.bindValue != PDLiveDataDefaultValue()) {
-        [wrapper activeStateChanged:YES];
-    }
+
+    [wrapper activeStateChanged:YES];
 }
 
 - (void)observe:(id<PDLiveDataObserver>)observer withLifecycleOwner:(UIResponder<PDLifecycleOwner> *)lifecycleOwner {
@@ -139,11 +136,11 @@ static id PDLiveDataDefaultValue(void) {
 }
 
 - (void)removeObservers:(UIResponder<PDLifecycleOwner> *)lifecycleOwner {
-    NSDictionary *observers = self.observerTable.dictionaryRepresentation;
-    NSArray<id<PDLiveDataObserver>> *allKeys = observers.allKeys;
-
-    for (id<PDLiveDataObserver> observer in allKeys) {
-        PDObserverWrapper *wrapper = observers[observer];
+    id<PDLiveDataObserver> observer;
+    NSEnumerator *enumerator = self.observerTable.keyEnumerator;
+    
+    while (observer = [enumerator nextObject]) {
+        PDObserverWrapper *wrapper = [self.observerTable objectForKey:observer];
         if ([wrapper isAttachTo:lifecycleOwner]) {
             [self removeObserver:observer];
         }
@@ -158,6 +155,14 @@ static id PDLiveDataDefaultValue(void) {
 
 - (id)getValue {
     return _bindValue != PDLiveDataDefaultValue() ? _bindValue : nil;
+}
+
+- (NSInteger)getVersion {
+    return _version;
+}
+
+- (BOOL)hasActiveObservers {
+    return self.activeCount > 0;
 }
 
 #pragma mark - Private Methods
@@ -182,11 +187,10 @@ static id PDLiveDataDefaultValue(void) {
             [self considerNotify:initiator];
             initiator = nil;
         } else {
-            NSDictionary *observers = self.observerTable.dictionaryRepresentation;
-            NSArray<id<PDLiveDataObserver>> *allKeys = observers.allKeys;
-
-            for (id<PDLiveDataObserver> observer in allKeys) {
-                PDObserverWrapper *wrapper = observers[observer];
+            PDObserverWrapper *wrapper;
+            NSEnumerator *objectEnumerator = [self.observerTable objectEnumerator];
+            
+            while (wrapper = [objectEnumerator nextObject]) {
                 [self considerNotify:wrapper];
                 
                 if (self.isDispatchInvalidated) {
@@ -222,6 +226,7 @@ static id PDLiveDataDefaultValue(void) {
 - (instancetype)initWithLiveData:(PDLiveData *)liveData observer:(id<PDLiveDataObserver>)observer {
     self = [super init];
     if (self) {
+        _lastVersion = PDLiveDataValueStartVersion;
         _liveData = liveData;
         _observer = observer;
     }

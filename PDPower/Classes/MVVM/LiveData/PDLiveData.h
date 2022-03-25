@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-/// LiveData 是一个数据持有者类，可以在给定的生命周期内观察到
+/// LiveData 是一个数据持有者类，可以在给定的生命周期内观察到数据的更新，不要直接使用 PDLiveData，这被做为一个抽象类
 @interface PDLiveData<ValueType> : NSObject
 
 /// 添加永久监听者，不需要关心生命周期，只要绑定的 Value 发生变化，就会通知给 observer
@@ -41,11 +41,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 移除生命周期所绑定的所有观察者
 - (void)removeObservers:(UIResponder<PDLifecycleOwner> *)lifecycleOwner;
 
-/// 当生命周期处于非活跃状态时，等待回复到活跃状态后更新数据，否则立即更新数据
-- (void)setValue:(ValueType)value;
+/// 获取当前数据的版本号
+- (NSInteger)getVersion;
 
-/// 获取当前数据的值
-- (ValueType)getValue;
+/// 如果这个 LiveData 有活动的观察者，则返回 YES
+- (BOOL)hasActiveObservers;
 
 @end
 

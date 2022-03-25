@@ -42,6 +42,7 @@
 #pragma mark - Lifecycle Methods
 - (instancetype)pd_init {
     UIViewController *_self = [self pd_init];
+    [_self pd_observeAppState];
     [_self pd_setCurrentState:PDLifecycleStatePageCreate];
     return _self;
 }
@@ -73,7 +74,27 @@
 
 - (void)pd_dealloc {
     [self pd_setCurrentState:PDLifecycleStatePageDealloc];
+    [self pd_cancelObserveAppState];
     [self pd_dealloc];
+}
+
+- (void)pd_observeAppState {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pd_applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pd_applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+}
+
+- (void)pd_cancelObserveAppState {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)pd_applicationDidBecomeActive:(NSNotification *)notification {
+    PDLifecycleState state = [[self getLifecycle] getCurrentState];
+    [self pd_setCurrentState:state];
+}
+
+- (void)pd_applicationWillResignActive:(NSNotification *)notification {
+    PDLifecycleState state = [[self getLifecycle] getCurrentState];
+    [self pd_setCurrentState:state];
 }
 
 #pragma mark - Private Methods

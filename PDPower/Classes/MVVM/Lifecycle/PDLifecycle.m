@@ -108,6 +108,11 @@
 @end
 
 BOOL PDLifecycleIsActive(PDLifecycleState state) {
+    UIApplicationState appState = [UIApplication sharedApplication].applicationState;
+    if (appState != UIApplicationStateActive) {
+        return NO;
+    }
+
     switch (state) {
         case PDLifecycleStatePageCreate:
         case PDLifecycleStatePageDidLoad:

@@ -10,11 +10,11 @@
 #endif
 #endif
 
+#import "UIViewController+PDLifecycle.h"
 #import "PDLifecycle.h"
 #import "PDLifecycleDefinition.h"
 #import "PDLifecycleObserver.h"
 #import "PDLifecycleOwner.h"
-#import "UIViewController+PDLifecycle.h"
 #import "PDLiveData+Internal.h"
 #import "PDLiveData.h"
 #import "PDMediatorLiveData.h"
@@ -23,6 +23,7 @@
 #import "PDViewModelProvider.h"
 #import "PDViewModelStore.h"
 #import "PDViewModelStoreOwner.h"
+#import "PDPower.h"
 #import "PDBaseUtils.h"
 #import "PDUIUtils.h"
 
