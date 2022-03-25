@@ -22,8 +22,10 @@ UIViewController * PDGetRootViewController(UIResponder *responder) {
     if (!controller) {
         return nil;
     }
-    
-    while (controller.parentViewController) {
+
+    while (controller.parentViewController &&
+           ![controller.parentViewController isKindOfClass:[UINavigationController class]] &&
+           ![controller.parentViewController isKindOfClass:[UITabBarController class]]) {
         controller = controller.parentViewController;
     }
     

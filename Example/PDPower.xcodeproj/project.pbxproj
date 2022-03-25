@@ -24,6 +24,8 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		C95A66CA631E785A4DFC69CB /* Pods_PDPower_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EACF3F5D79FB637A5F7CC /* Pods_PDPower_Tests.framework */; };
+		DD61B91C27EE29F40041B222 /* PDComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD61B91B27EE29F40041B222 /* PDComponentViewController.m */; };
+		DD61B91F27EE2A440041B222 /* PDTestSharedViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD61B91E27EE2A440041B222 /* PDTestSharedViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		817F36A7F97AEA7B2C1F9E0D /* Pods-PDPower_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDPower_Tests.release.xcconfig"; path = "Target Support Files/Pods-PDPower_Tests/Pods-PDPower_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4613ACA0050BBA5EF6698FA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DD61B91A27EE29F40041B222 /* PDComponentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDComponentViewController.h; sourceTree = "<group>"; };
+		DD61B91B27EE29F40041B222 /* PDComponentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDComponentViewController.m; sourceTree = "<group>"; };
+		DD61B91D27EE2A440041B222 /* PDTestSharedViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDTestSharedViewModel.h; sourceTree = "<group>"; };
+		DD61B91E27EE2A440041B222 /* PDTestSharedViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDTestSharedViewModel.m; sourceTree = "<group>"; };
 		EEF0671725AAFBE536470D56 /* Pods-PDPower_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDPower_Example.debug.xcconfig"; path = "Target Support Files/Pods-PDPower_Example/Pods-PDPower_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F6B73790641231C008E1EC01 /* Pods_PDPower_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDPower_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -132,6 +138,7 @@
 		6003F593195388D20070C39A /* Example for PDPower */ = {
 			isa = PBXGroup;
 			children = (
+				DD61B91927EE29DD0041B222 /* Demo */,
 				6003F59C195388D20070C39A /* PDAppDelegate.h */,
 				6003F59D195388D20070C39A /* PDAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -194,6 +201,17 @@
 				817F36A7F97AEA7B2C1F9E0D /* Pods-PDPower_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DD61B91927EE29DD0041B222 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				DD61B91A27EE29F40041B222 /* PDComponentViewController.h */,
+				DD61B91B27EE29F40041B222 /* PDComponentViewController.m */,
+				DD61B91D27EE2A440041B222 /* PDTestSharedViewModel.h */,
+				DD61B91E27EE2A440041B222 /* PDTestSharedViewModel.m */,
+			);
+			name = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,7 +382,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD61B91C27EE29F40041B222 /* PDComponentViewController.m in Sources */,
 				6003F59E195388D20070C39A /* PDAppDelegate.m in Sources */,
+				DD61B91F27EE2A440041B222 /* PDTestSharedViewModel.m in Sources */,
 				6003F5A7195388D20070C39A /* PDMainViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

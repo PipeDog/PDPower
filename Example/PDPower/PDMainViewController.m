@@ -11,18 +11,8 @@
 #import <PDPower/PDMutableLiveData.h>
 #import <PDPower/PDViewModelProvider.h>
 #import <PDPower/PDViewModel.h>
-
-@interface PDTestViewModel : PDViewModel
-
-@end
-
-@implementation PDTestViewModel
-
-- (void)doSomething {
-    NSLog(@"%s", __FUNCTION__);
-}
-
-@end
+#import "PDComponentViewController.h"
+#import "PDTestSharedViewModel.h"
 
 @interface PDMainViewController () <PDLiveDataObserver>
 
@@ -41,10 +31,14 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     PDViewModelProvider *viewModelProvider = [self getViewModelProvider];
-    PDTestViewModel *viewModel = [viewModelProvider viewModelByClass:[PDTestViewModel class]];
+    PDTestSharedViewModel *viewModel = [viewModelProvider viewModelByClass:[PDTestSharedViewModel class]];
     [viewModel doSomething];
 
-
+    PDComponentViewController *componentVC = [[PDComponentViewController alloc] init];
+    [self addChildViewController:componentVC];
+    [self.view addSubview:componentVC.view];
+    
+    
     self.mediatorLiveData = [[PDMediatorLiveData alloc] init];
     self.liveData1 = [[PDMutableLiveData alloc] init];
     self.liveData2 = [[PDMutableLiveData alloc] init];
@@ -64,6 +58,10 @@
     [self.liveData1 setValue:@"liveData1"];
     [self.liveData2 setValue:@"liveData2"];
     [self.liveData3 setValue:@"liveData3"];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self presentViewController:[UIViewController new] animated:YES completion:nil];
+    });
     
 }
 
