@@ -31,7 +31,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     PDViewModelProvider *viewModelProvider = [self getViewModelProvider];
-    PDTestSharedViewModel *viewModel = [viewModelProvider viewModelByClass:[PDTestSharedViewModel class]];
+    PDTestSharedViewModel *viewModel = [viewModelProvider getViewModel:[PDTestSharedViewModel class]];
     [viewModel doSomething];
 
     PDComponentViewController *componentVC = [[PDComponentViewController alloc] init];

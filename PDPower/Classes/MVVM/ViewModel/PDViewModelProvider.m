@@ -34,7 +34,7 @@
     return self;
 }
 
-- (__kindof PDViewModel *)viewModelByClass:(Class)viewModelClass {
+- (__kindof PDViewModel *)getViewModel:(Class)viewModelClass {
     if (!viewModelClass || !class_isSuperclass([PDViewModel class], viewModelClass)) {
         NSAssert(NO, @"Invalid argument `viewModelClass`, check it!");
         return nil;

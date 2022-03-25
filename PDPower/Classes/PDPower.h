@@ -31,4 +31,12 @@
 #import "PDViewModelStoreOwner.h"
 
 
+// Section: Relaxed
+
+#import "PDComponent.h"
+#import "PDViewController.h"
+#import "PDServiceManager.h"
+#import "PDBizService.h"
+
+
 #endif /* PDPower_h */

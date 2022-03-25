@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///     ```
 ///     UIResponder<PDViewModelStoreOwner> *sharedStoreOwner = [self getSharedViewModelStoreOwner];
 ///     PDViewModelProvider *provider = [[PDViewModelProvider alloc] initWithStoreOwner:sharedStoreOwner];
-///     PDSharedXXXViewModel *viewModel = [provider viewModelByClass:[PDSharedXXXViewModel class]];
+///     PDSharedXXXViewModel *viewModel = [provider getViewModel:[PDSharedXXXViewModel class]];
 ///     ```
 /// @return 当前所在页面的共享 ViewModelStoreOwner，通常情况下这会是一个 UIViewController 实例
 - (UIResponder<PDViewModelStoreOwner> *)getSharedViewModelStoreOwner;

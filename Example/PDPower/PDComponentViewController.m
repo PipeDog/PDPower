@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     
     PDViewModelProvider *viewModelProvider = [self getSharedViewModelProvider];
-    PDTestSharedViewModel *viewModel = [viewModelProvider viewModelByClass:[PDTestSharedViewModel class]];
+    PDTestSharedViewModel *viewModel = [viewModelProvider getViewModel:[PDTestSharedViewModel class]];
     [viewModel doSomething];
 
 }

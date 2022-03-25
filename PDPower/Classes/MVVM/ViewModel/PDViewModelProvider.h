@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取 ViewModel 对象
 /// @param viewModelClass ViewModel 的 Class
 /// @return 你需要的 ViewModel 对象
-- (__kindof PDViewModel *)viewModelByClass:(Class)viewModelClass;
+- (__kindof PDViewModel *)getViewModel:(Class)viewModelClass;
 
 @end
 
