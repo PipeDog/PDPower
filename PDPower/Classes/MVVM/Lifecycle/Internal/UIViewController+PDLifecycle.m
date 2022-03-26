@@ -38,10 +38,6 @@
                                      @selector(pd_dealloc));
     });
 }
-// 这里调用的两个方法，如果不进行干涉，他们的运行会受到 runLoop 的影响，导致方法的
-// 执行顺序不符合预期，你可以通过打印日志来进行印证（业务代码中的 - viewDidLoad 方
-// 法内容会后执行），这里是为了解决 runLoop 带来的影响，因此将他们统一推迟到了下一次
-// runLoop 去执行
 
 #pragma mark - Lifecycle Methods
 - (instancetype)pd_init {
