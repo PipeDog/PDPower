@@ -10,10 +10,23 @@
 #import "PDTestComponent.h"
 #import "PDTestSharedViewModel.h"
 
+@interface PDTestLifecycleObserver : NSObject <PDLifecycleObserver>
+
+@end
+
+@implementation PDTestLifecycleObserver
+
+- (void)lifecycleOwner:(id<PDLifecycleOwner>)lifecycleOwner onStateChanged:(PDLifecycleState)state {
+    NSLog(@"%s, state = %zd", __FUNCTION__, state);
+}
+
+@end
+
 @interface PDTestViewController ()
 
 @property (nonatomic, strong) PDTestComponent *component;
 @property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) PDTestLifecycleObserver *lifecycleObserver;
 
 @end
 
@@ -21,6 +34,17 @@
 
 - (void)dealloc {
     NSLog(@"%s", __FUNCTION__);
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        NSLog(@">>>>> init 1111");
+        _lifecycleObserver = [[PDTestLifecycleObserver alloc] init];
+        [[self getLifecycle] addObserver:_lifecycleObserver];
+        NSLog(@">>>>> init 2222");
+    }
+    return self;
 }
 
 - (void)viewDidLoad {

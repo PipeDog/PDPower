@@ -38,21 +38,34 @@
                                      @selector(pd_dealloc));
     });
 }
+// 这里调用的两个方法，如果不进行干涉，他们的运行会受到 runLoop 的影响，导致方法的
+// 执行顺序不符合预期，你可以通过打印日志来进行印证（业务代码中的 - viewDidLoad 方
+// 法内容会后执行），这里是为了解决 runLoop 带来的影响，因此将他们统一推迟到了下一次
+// runLoop 去执行
 
 #pragma mark - Lifecycle Methods
 - (instancetype)pd_init {
     UIViewController *_self = [self pd_init];
-    [_self pd_observeAppState];
-    [_self pd_setCurrentState:PDLifecycleStatePageCreate];
+    
+    // 这里将 block 中的两个方法包装起来，并将他们推迟到下一次 runLoop 进行执行，主要是
+    // 因为 runLoop 的因素，导致方法的执行顺序不符合预期，在不进行干涉的情况下，block 中
+    // 的两个方法是在本次 runLoop 中执行的，而 - init 方法则是在下一次 runLoop 中执行
+    // （你可以通过打印日志或断点的方式去进行确认，来确保我所描述的真实性），为了消除 runLoop
+    // 带来的影响，这里将 block 中的方法推迟到了下一次 runLoop 执行，并且因为 runLoop
+    // 采用来链表来进行任务的管理，而 - init 方法是做为任务节点先被提交的，所以可以保证
+    // - init 方法一定在 block 中的方法执行之后才会被执行
+    
+    [self pd_executeBlockOnMainThread:^{
+        [_self pd_observeAppState];
+        [_self pd_setCurrentState:PDLifecycleStatePageCreate];
+    }];
+    
     return _self;
 }
 
 - (void)pd_viewDidLoad {
+    // 原因同 - pd_init 方法所描述的，也是为了消除 runLoop 对这两个方法的影响
     [self pd_executeBlockOnMainThread:^{
-        // 这里调用的两个方法，如果不进行干涉，他们的运行会受到 runLoop 的影响，导致方法的
-        // 执行顺序不符合预期，你可以通过打印日志来进行印证（业务代码中的 - viewDidLoad 方
-        // 法内容会后执行），这里是为了解决 runLoop 带来的影响，因此将他们统一推迟到了下一次
-        // runLoop 去执行
         [self pd_viewDidLoad];
         [self pd_setCurrentState:PDLifecycleStatePageDidLoad];
     }];
