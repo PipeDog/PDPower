@@ -31,3 +31,17 @@ UIViewController * PDGetRootViewController(UIResponder *responder) {
     
     return controller;
 }
+
+NSArray<UIResponder *> *PDObtainResponderChain(UIResponder *responder) {
+    NSMutableArray<UIResponder *> *chain = [NSMutableArray array];
+    if (!responder) {
+        return chain;
+    }
+    
+    while (responder) {
+        [chain addObject:responder];
+        responder = [responder nextResponder];
+    }
+    
+    return chain;
+}

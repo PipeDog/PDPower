@@ -13,6 +13,7 @@
 #import <PDPower/PDViewModel.h>
 #import "PDComponentViewController.h"
 #import "PDTestSharedViewModel.h"
+#import "PDTestViewController.h"
 
 @interface PDMainViewController ()
 
@@ -34,9 +35,9 @@
     PDTestSharedViewModel *viewModel = [viewModelProvider getViewModel:[PDTestSharedViewModel class]];
     [viewModel doSomething];
 
-    PDComponentViewController *componentVC = [[PDComponentViewController alloc] init];
-    [self addChildViewController:componentVC];
-    [self.view addSubview:componentVC.view];
+//    PDComponentViewController *componentVC = [[PDComponentViewController alloc] init];
+//    [self addChildViewController:componentVC];
+//    [self.view addSubview:componentVC.view];
     
     
     self.mediatorLiveData = [[PDMediatorLiveData alloc] init];
@@ -64,14 +65,19 @@
     [self.liveData2 setValue:@"liveData2"];
     [self.liveData3 setValue:@"liveData3"];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self presentViewController:[UIViewController new] animated:YES completion:nil];
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self presentViewController:[UIViewController new] animated:YES completion:nil];
+//    });
     
+    UIResponder *responder = self.view;
+    while (responder) {
+        NSLog(@"responder class = %@", [responder class]);
+        responder = [responder nextResponder];
+    }
 }
 
 - (IBAction)didClickPush:(id)sender {
-    UIViewController *controller = [[PDMainViewController alloc] init];
+    UIViewController *controller = [[PDTestViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

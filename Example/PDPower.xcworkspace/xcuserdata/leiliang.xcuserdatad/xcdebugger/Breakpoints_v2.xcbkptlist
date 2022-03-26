@@ -8,14 +8,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A594DB5F-FB56-4BC7-AEC6-6CED4B179EF6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PDPower/PDMainViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -24,14 +24,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "57996A33-272B-4686-A5C9-EA57D65802C0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PDPower/PDMainViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,9 +46,137 @@
             filePath = "../PDPower/Classes/MVVM/LiveData/PDMediatorLiveData.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "-addSource:observer:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2C893039-4073-41F2-AABE-B41EA3010C19 - 2c2e5cd9f7855ad9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PDMediatorLiveData removeSource:]"
+                  moduleName = "PDPower"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leiliang/Desktop/Pipedog/PDPower/PDPower/Classes/MVVM/LiveData/PDMediatorLiveData.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "2C893039-4073-41F2-AABE-B41EA3010C19 - b26360b6f64459bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PDMediatorLiveData addSource:observer:]"
+                  moduleName = "PDPower"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leiliang/Desktop/Pipedog/PDPower/PDPower/Classes/MVVM/LiveData/PDMediatorLiveData.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "466">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8CC0A72F-31AF-405B-89A4-035D1DCDB641"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../PDPower/Classes/MVVM/LiveData/PDMediatorLiveData.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-onChangedBlock"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8CC0A72F-31AF-405B-89A4-035D1DCDB641 - e8dd69fd12cf011"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PDMediatorLiveDataSource onChangedBlock]"
+                  moduleName = "PDPower"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leiliang/Desktop/Pipedog/PDPower/PDPower/Classes/MVVM/LiveData/PDMediatorLiveData.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "8CC0A72F-31AF-405B-89A4-035D1DCDB641 - cdee4a9df5b3c69b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[PDMediatorLiveDataSource onChangedBlock]_block_invoke"
+                  moduleName = "PDPower"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leiliang/Desktop/Pipedog/PDPower/PDPower/Classes/MVVM/LiveData/PDMediatorLiveData.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "399">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37607B8A-85B0-4BF4-AAFC-D9DFCF6AC00B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PDPower/PDMainViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-didClickPush:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3DD872AF-0F58-45FE-B0EB-A021A39A153D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../PDPower/Classes/MVVM/Relaxed/PDViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-addComponent:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E3D7A70-5FB1-4092-BC58-7B175FA8CC24"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../PDPower/Classes/MVVM/Relaxed/PDComponent.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-nextResponder"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

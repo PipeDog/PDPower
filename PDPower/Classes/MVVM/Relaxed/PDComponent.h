@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 组件中所绑定的容器视图，你可以像使用 ViewController 的 view 属性一样使用它
 @property (nonatomic, strong, readonly) UIView *view;
 
+- (instancetype)init NS_UNAVAILABLE;
+
 /// 指定初始化方法
 /// @param viewController 组件所依赖的 ViewController 对象
 - (instancetype)initWithViewController:(UIViewController *)viewController;

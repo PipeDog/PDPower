@@ -17,4 +17,7 @@ UIKIT_EXTERN UIViewController * _Nullable PDGetViewController(UIResponder *respo
 /// @param responder UI 响应者，可能是 UIView、UIViewController 及其子类，也可能是自定义的 Component
 UIKIT_EXTERN UIViewController * _Nullable PDGetRootViewController(UIResponder *responder);
 
+/// 获取给定响应者的响应者链，并以数组的方式返回
+UIKIT_EXTERN NSArray<UIResponder *> *PDObtainResponderChain(UIResponder *responder);
+
 NS_ASSUME_NONNULL_END

@@ -19,13 +19,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUe-sO-iX3">
-                                <rect key="frame" x="109" y="152" width="139" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQJ-OM-d59">
+                                <rect key="frame" x="123" y="197" width="147" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Push"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Push Button"/>
                                 <connections>
-                                    <action selector="didClickPush:" destination="whP-gf-Uak" eventType="touchUpInside" id="g1N-Uv-b1e"/>
+                                    <action selector="didClickPush:" destination="whP-gf-Uak" eventType="touchUpInside" id="gH8-pP-1cO"/>
                                 </connections>
                             </button>
                         </subviews>

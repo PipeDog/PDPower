@@ -28,6 +28,21 @@
     return self.component;
 }
 
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    __block UIView *responder = nil;
+    NSArray<UIView *> *subviews = [self.subviews copy];
+    [subviews enumerateObjectsWithOptions:NSEnumerationReverse
+                               usingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGPoint convertPoint = [self convertPoint:point toView:obj];
+        responder = [obj hitTest:convertPoint withEvent:event];
+        if (responder) {
+            *stop = YES;
+        }
+    }];
+
+    return responder ?: nil;
+}
+
 @end
 
 @interface PDComponent ()
@@ -42,7 +57,7 @@
     self = [super init];
     if (self) {
         _viewController = viewController;
-        _view = [[PDComponentView alloc] init];
+        _view = [[PDComponentView alloc] initWithComponent:self];
         _view.backgroundColor = [UIColor clearColor];
     }
     return self;
@@ -55,7 +70,10 @@
 
 #pragma mark - Override Methods
 - (UIResponder *)nextResponder {
-    return self.viewController;
+    return self.viewController.view;
 }
+
+// component -> component.view -> viewController.view -> viewController ???
+// component.view -> component -> viewController.view -> viewController ???
 
 @end

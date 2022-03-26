@@ -26,6 +26,8 @@
 		C95A66CA631E785A4DFC69CB /* Pods_PDPower_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657EACF3F5D79FB637A5F7CC /* Pods_PDPower_Tests.framework */; };
 		DD61B91C27EE29F40041B222 /* PDComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD61B91B27EE29F40041B222 /* PDComponentViewController.m */; };
 		DD61B91F27EE2A440041B222 /* PDTestSharedViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD61B91E27EE2A440041B222 /* PDTestSharedViewModel.m */; };
+		DD85192A27EEDFD300467D14 /* PDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD85192927EEDFD300467D14 /* PDTestViewController.m */; };
+		DD85192D27EEDFEA00467D14 /* PDTestComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DD85192C27EEDFEA00467D14 /* PDTestComponent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,10 @@
 		DD61B91B27EE29F40041B222 /* PDComponentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDComponentViewController.m; sourceTree = "<group>"; };
 		DD61B91D27EE2A440041B222 /* PDTestSharedViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDTestSharedViewModel.h; sourceTree = "<group>"; };
 		DD61B91E27EE2A440041B222 /* PDTestSharedViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDTestSharedViewModel.m; sourceTree = "<group>"; };
+		DD85192827EEDFD300467D14 /* PDTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDTestViewController.h; sourceTree = "<group>"; };
+		DD85192927EEDFD300467D14 /* PDTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDTestViewController.m; sourceTree = "<group>"; };
+		DD85192B27EEDFEA00467D14 /* PDTestComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDTestComponent.h; sourceTree = "<group>"; };
+		DD85192C27EEDFEA00467D14 /* PDTestComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDTestComponent.m; sourceTree = "<group>"; };
 		EEF0671725AAFBE536470D56 /* Pods-PDPower_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDPower_Example.debug.xcconfig"; path = "Target Support Files/Pods-PDPower_Example/Pods-PDPower_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F6B73790641231C008E1EC01 /* Pods_PDPower_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDPower_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,12 +212,24 @@
 		DD61B91927EE29DD0041B222 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				DD85192727EEDFC400467D14 /* Component */,
 				DD61B91A27EE29F40041B222 /* PDComponentViewController.h */,
 				DD61B91B27EE29F40041B222 /* PDComponentViewController.m */,
 				DD61B91D27EE2A440041B222 /* PDTestSharedViewModel.h */,
 				DD61B91E27EE2A440041B222 /* PDTestSharedViewModel.m */,
 			);
 			name = Demo;
+			sourceTree = "<group>";
+		};
+		DD85192727EEDFC400467D14 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				DD85192827EEDFD300467D14 /* PDTestViewController.h */,
+				DD85192927EEDFD300467D14 /* PDTestViewController.m */,
+				DD85192B27EEDFEA00467D14 /* PDTestComponent.h */,
+				DD85192C27EEDFEA00467D14 /* PDTestComponent.m */,
+			);
+			name = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,9 +402,11 @@
 			files = (
 				DD61B91C27EE29F40041B222 /* PDComponentViewController.m in Sources */,
 				6003F59E195388D20070C39A /* PDAppDelegate.m in Sources */,
+				DD85192A27EEDFD300467D14 /* PDTestViewController.m in Sources */,
 				DD61B91F27EE2A440041B222 /* PDTestSharedViewModel.m in Sources */,
 				6003F5A7195388D20070C39A /* PDMainViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				DD85192D27EEDFEA00467D14 /* PDTestComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
