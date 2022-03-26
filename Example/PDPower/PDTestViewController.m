@@ -24,7 +24,7 @@
     
     [self.view addSubview:self.button];
 
-    self.component = [[PDTestComponent alloc] initWithViewController:self];
+    self.component = [[PDTestComponent alloc] initWithController:self];
     [self addComponent:self.component];    
 }
 

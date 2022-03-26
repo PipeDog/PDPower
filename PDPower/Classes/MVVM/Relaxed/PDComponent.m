@@ -53,10 +53,10 @@
 
 @implementation PDComponent
 
-- (instancetype)initWithViewController:(UIViewController *)viewController {
+- (instancetype)initWithController:(UIViewController *)controller {
     self = [super init];
     if (self) {
-        _viewController = viewController;
+        _controller = controller;
         _view = [[PDComponentView alloc] initWithComponent:self];
         _view.backgroundColor = [UIColor clearColor];
     }
@@ -64,13 +64,13 @@
 }
 
 - (PDViewModel *)getViewModel:(Class)viewModelClass {
-    PDViewModelProvider *viewModelProvider = [self.viewController getViewModelProvider];
+    PDViewModelProvider *viewModelProvider = [self.controller getViewModelProvider];
     return [viewModelProvider getViewModel:viewModelClass];
 }
 
 #pragma mark - Override Methods
 - (UIResponder *)nextResponder {
-    return self.viewController.view;
+    return self.controller.view;
 }
 
 @end

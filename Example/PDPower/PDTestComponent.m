@@ -17,8 +17,8 @@
 
 @implementation PDTestComponent
 
-- (instancetype)initWithViewController:(UIViewController *)viewController {
-    self = [super initWithViewController:viewController];
+- (instancetype)initWithController:(UIViewController *)controller {
+    self = [super initWithController:controller];
     if (self) {
         [self.view addSubview:self.button];
         self.view.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.25f];
