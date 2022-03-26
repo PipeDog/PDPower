@@ -28,7 +28,11 @@
 #import "PDViewModelStore.h"
 #import "PDViewModelStoreOwner.h"
 #import "PDPower.h"
+#import "PDRouter.h"
+#import "PDRouterPlugin.h"
 #import "ReplaceMe.h"
+#import "PDClassPropertyInfo.h"
+#import "PDModelKVMapper.h"
 #import "PDBaseUtils.h"
 #import "PDUIUtils.h"
 
