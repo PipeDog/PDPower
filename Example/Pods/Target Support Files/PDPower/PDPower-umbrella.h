@@ -28,6 +28,7 @@
 #import "PDViewModelStore.h"
 #import "PDViewModelStoreOwner.h"
 #import "PDPower.h"
+#import "ReplaceMe.h"
 #import "PDBaseUtils.h"
 #import "PDUIUtils.h"
 
