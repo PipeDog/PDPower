@@ -215,8 +215,6 @@
 				DD85192727EEDFC400467D14 /* Component */,
 				DD61B91A27EE29F40041B222 /* PDComponentViewController.h */,
 				DD61B91B27EE29F40041B222 /* PDComponentViewController.m */,
-				DD61B91D27EE2A440041B222 /* PDTestSharedViewModel.h */,
-				DD61B91E27EE2A440041B222 /* PDTestSharedViewModel.m */,
 			);
 			name = Demo;
 			sourceTree = "<group>";
@@ -224,6 +222,8 @@
 		DD85192727EEDFC400467D14 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				DD61B91D27EE2A440041B222 /* PDTestSharedViewModel.h */,
+				DD61B91E27EE2A440041B222 /* PDTestSharedViewModel.m */,
 				DD85192827EEDFD300467D14 /* PDTestViewController.h */,
 				DD85192927EEDFD300467D14 /* PDTestViewController.m */,
 				DD85192B27EEDFEA00467D14 /* PDTestComponent.h */,
