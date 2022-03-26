@@ -16,8 +16,33 @@
 
 @implementation PDTestLifecycleObserver
 
-- (void)lifecycleOwner:(id<PDLifecycleOwner>)lifecycleOwner onStateChanged:(PDLifecycleState)state {
-    NSLog(@"%s, state = %zd", __FUNCTION__, state);
+//- (void)lifecycleOwner:(id<PDLifecycleOwner>)lifecycleOwner onStateChanged:(PDLifecycleState)state {
+//    NSLog(@"%s, state = %zd", __FUNCTION__, state);
+//    NSLog(@"[Life] %s, state = %zd", __FUNCTION__);
+//}
+
+- (void)onPageCreate:(id<PDLifecycleOwner>)lifecycleOwner {
+    NSLog(@"[Life] %s", __FUNCTION__);
+}
+
+- (void)onPageDidLoad:(id<PDLifecycleOwner>)lifecycleOwner {
+    NSLog(@"[Life] %s", __FUNCTION__);
+}
+
+- (void)onPageWillAppear:(id<PDLifecycleOwner>)lifecycleOwner {
+    NSLog(@"[Life] %s", __FUNCTION__);
+}
+
+- (void)onPageDidAppear:(id<PDLifecycleOwner>)lifecycleOwner {
+    NSLog(@"[Life] %s", __FUNCTION__);
+}
+
+- (void)onPageWillDisappear:(id<PDLifecycleOwner>)lifecycleOwner {
+    NSLog(@"[Life] %s", __FUNCTION__);
+}
+
+- (void)onPageDidDisappear:(id<PDLifecycleOwner>)lifecycleOwner {
+    NSLog(@"[Life] %s", __FUNCTION__);
 }
 
 @end
@@ -51,6 +76,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSLog(@"[Life] %s", __FUNCTION__);
+    
     NSLog(@"111: %s", __FUNCTION__);
     
     [self.view addSubview:self.button];
@@ -65,6 +92,26 @@
     [viewModel doSomething];
     
     NSLog(@"333: %s", __FUNCTION__);
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"[Life] %s", __FUNCTION__);
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"[Life] %s", __FUNCTION__);
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"[Life] %s", __FUNCTION__);
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSLog(@"[Life] %s", __FUNCTION__);
 }
 
 - (void)didClickControllerButton:(UIButton *)sender {

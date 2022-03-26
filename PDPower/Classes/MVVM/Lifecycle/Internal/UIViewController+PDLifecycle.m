@@ -51,35 +51,37 @@
     // 采用链表来进行任务的管理，而 - init 方法是做为任务节点先被提交的，所以可以保证
     // - init 方法一定在 block 中的方法执行之后才会被执行
     
-    [self pd_executeBlockOnMainThread:^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         [_self pd_observeAppState];
         [_self pd_setCurrentState:PDLifecycleStatePageCreate];
-    }];
+    });
     
     return _self;
 }
 
 - (void)pd_viewDidLoad {
     // 原因同 - pd_init 方法所描述的，也是为了消除 runLoop 对这两个方法的影响
-    [self pd_executeBlockOnMainThread:^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         [self pd_viewDidLoad];
         [self pd_setCurrentState:PDLifecycleStatePageDidLoad];
-    }];
+    });
 }
 
 - (void)pd_viewWillAppear:(BOOL)animated {
     // 为了保证 viewDidLoad 与 viewWillAppear: 两个方法的执行顺序，因此这里将
     // viewWillAppear: 的执行也推迟到了下一次 runLoop，以此来保证 viewWillAppear:
     // 一定在 viewDidLoad 方法之后执行
-    [self pd_executeBlockOnMainThread:^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         [self pd_viewWillAppear:animated];
         [self pd_setCurrentState:PDLifecycleStatePageWillAppear];
-    }];
+    });
 }
 
 - (void)pd_viewDidAppear:(BOOL)animated {
-    [self pd_viewDidAppear:animated];
-    [self pd_setCurrentState:PDLifecycleStatePageDidAppear];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self pd_viewDidAppear:animated];
+        [self pd_setCurrentState:PDLifecycleStatePageDidAppear];
+    });
 }
 
 - (void)pd_viewWillDisappear:(BOOL)animated {
@@ -121,16 +123,6 @@
 - (void)pd_setCurrentState:(PDLifecycleState)state {
     PDLifecycle *lifecycle = [self getLifecycle];
     [lifecycle setCurrentState:state];
-}
-
-- (void)pd_executeBlockOnMainThread:(dispatch_block_t)block {
-    // 这里的主要目的并不是切换线程，而是为了让任务在下一次 runLoop 中执行
-    [self performSelector:@selector(pd_executeBlock:)
-                 onThread:[NSThread mainThread] withObject:[block copy] waitUntilDone:NO];
-}
-
-- (void)pd_executeBlock:(dispatch_block_t)block {
-    if (block) block();
 }
 
 @end
