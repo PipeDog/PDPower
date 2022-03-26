@@ -73,7 +73,4 @@
     return self.viewController.view;
 }
 
-// component -> component.view -> viewController.view -> viewController ???
-// component.view -> component -> viewController.view -> viewController ???
-
 @end
