@@ -11,6 +11,7 @@
 
 @interface PDMediatorLiveDataSource : NSObject
 
+@property (nonatomic, weak) PDMediatorLiveData *mediatorLiveData;
 @property (nonatomic, weak) PDLiveData *liveData;
 @property (nonatomic, copy) void (^observer)(id);
 @property (nonatomic, assign) NSInteger version;
@@ -20,13 +21,15 @@
 
 @implementation PDMediatorLiveDataSource
 
-- (instancetype)initWithLiveData:(PDLiveData *)liveData observer:(void (^)(id))observer {
+- (instancetype)initWithMediatorLiveData:(PDMediatorLiveData *)mediatorLiveData
+                                liveData:(PDLiveData *)liveData
+                                observer:(void (^)(id))observer {
     self = [super init];
     if (self) {
-        _version = PDLiveDataValueStartVersion;
+        _mediatorLiveData = mediatorLiveData;
         _liveData = liveData;
         _observer = observer;
-        
+        _version = PDLiveDataValueStartVersion;
     }
     return self;
 }
@@ -54,6 +57,7 @@
             
             strongSelf.version = [strongSelf.liveData getVersion];
             !strongSelf.observer ?: strongSelf.observer(newValue);
+            [strongSelf.mediatorLiveData setValue:newValue];
         };
     }
     return _onChangedBlock;
@@ -80,7 +84,7 @@
 #pragma mark - Public Methods
 - (void)addSource:(PDLiveData *)source observer:(void (^)(id _Nullable))observer {
     PDMediatorLiveDataSource *existing = [self.sourceMap objectForKey:source];
-    PDMediatorLiveDataSource *e = [[PDMediatorLiveDataSource alloc] initWithLiveData:source observer:observer];
+    PDMediatorLiveDataSource *e = [[PDMediatorLiveDataSource alloc] initWithMediatorLiveData:self liveData:source observer:observer];
     [_sourceMap setObject:e forKey:source];
     
     if (existing && existing.observer != observer) {

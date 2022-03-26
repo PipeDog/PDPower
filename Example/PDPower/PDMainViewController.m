@@ -44,9 +44,7 @@
     self.liveData2 = [[PDMutableLiveData alloc] init];
     self.liveData3 = [[PDMutableLiveData alloc] init];
     
-    __weak typeof(self) weakSelf = self;
     [self.mediatorLiveData addSource:self.liveData1 observer:^(NSString * _Nullable newValue) {
-        [weakSelf.mediatorLiveData setValue:newValue];
         NSLog(@"111 : newValue = %@", newValue);
     }];
 
@@ -59,7 +57,7 @@
     }];
         
     [self.mediatorLiveData observe:^(NSString * _Nullable newValue) {
-        NSLog(@"newValue = %@", newValue);
+        NSLog(@"mediator :: newValue = %@", newValue);
     } withLifecycleOwner:self];
     
     [self.liveData1 setValue:@"liveData1"];
