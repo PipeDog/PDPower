@@ -8,6 +8,7 @@
 
 #import "PDTestViewController.h"
 #import "PDTestComponent.h"
+#import "PDTestSharedViewModel.h"
 
 @interface PDTestViewController ()
 
@@ -18,14 +19,22 @@
 
 @implementation PDTestViewController
 
+- (void)dealloc {
+    NSLog(@"%s", __FUNCTION__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     [self.view addSubview:self.button];
 
-    self.component = [[PDTestComponent alloc] initWithController:self];
-    [self addComponent:self.component];    
+    self.component = [[PDTestComponent alloc] init];
+    [self attachComponent:self.component];
+    
+    PDViewModelProvider *viewModelProvider = [self getViewModelProvider];
+    PDTestSharedViewModel *viewModel = [viewModelProvider getViewModel:[PDTestSharedViewModel class]];
+    [viewModel doSomething];
 }
 
 - (void)didClickControllerButton:(UIButton *)sender {

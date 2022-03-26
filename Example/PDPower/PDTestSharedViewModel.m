@@ -10,6 +10,10 @@
 
 @implementation PDTestSharedViewModel
 
+- (void)dealloc {
+    NSLog(@"%s", __FUNCTION__);
+}
+
 - (void)doSomething {
     NSLog(@"%s, %@", __FUNCTION__, self);
 }

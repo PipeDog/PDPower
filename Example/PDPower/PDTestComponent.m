@@ -17,13 +17,25 @@
 
 @implementation PDTestComponent
 
-- (instancetype)initWithController:(UIViewController *)controller {
-    self = [super initWithController:controller];
+- (void)dealloc {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (instancetype)init {
+    self = [super init];
     if (self) {
         [self.view addSubview:self.button];
         self.view.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.25f];
     }
     return self;
+}
+
+- (void)didAttachToController {
+    
+}
+
+- (void)onPageWillAppear:(id<PDLifecycleOwner>)lifecycleOwner {
+    NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)didClickButton:(UIButton *)sender {

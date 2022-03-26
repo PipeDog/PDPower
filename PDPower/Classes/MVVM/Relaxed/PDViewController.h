@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PDViewController : UIViewController
 
 /// 添加 Component，并对 Component 绑定的 view 进行约束布局
-- (void)addComponent:(PDComponent *)component;
+- (void)attachComponent:(PDComponent *)component;
 /// 移除 Component，并取消约束布局
-- (void)removeComponent:(PDComponent *)component;
+- (void)detachComponent:(PDComponent *)component;
 
 /// 获取 ViewModel 对象
 - (PDViewModel *)getViewModel:(Class)viewModelClass;

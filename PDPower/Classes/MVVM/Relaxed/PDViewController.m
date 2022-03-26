@@ -23,7 +23,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
-- (void)addComponent:(PDComponent *)component {
+- (void)attachComponent:(PDComponent *)component {
+    [component willAttachToController:self];
+    
     component.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:component.view];
     
@@ -36,14 +38,20 @@
     
     [NSLayoutConstraint activateConstraints:constraints];
     [self.layoutMapTable setObject:constraints forKey:component];
+    
+    [component didAttachToController];
 }
 
-- (void)removeComponent:(PDComponent *)component {
+- (void)detachComponent:(PDComponent *)component {
+    [component willDetachFromController:self];
+    
     component.view.translatesAutoresizingMaskIntoConstraints = YES;
     [component.view removeFromSuperview];
     
     NSArray *constraints = [self.layoutMapTable objectForKey:component];
     [NSLayoutConstraint deactivateConstraints:constraints];
+    
+    [component didDetachFromController];
 }
 
 - (PDViewModel *)getViewModel:(Class)viewModelClass {

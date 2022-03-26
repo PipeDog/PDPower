@@ -7,6 +7,8 @@
 
 #import "PDComponent.h"
 #import "PDViewModelProvider.h"
+#import "PDLifecycleOwner.h"
+#import "PDLifecycle.h"
 
 @interface PDComponentView : UIView
 
@@ -48,15 +50,15 @@
 @interface PDComponent ()
 
 @property (nonatomic, strong) PDComponentView *view;
+@property (nonatomic, weak) UIViewController *attachedController;
 
 @end
 
 @implementation PDComponent
 
-- (instancetype)initWithController:(UIViewController *)controller {
+- (instancetype)init {
     self = [super init];
     if (self) {
-        _controller = controller;
         _view = [[PDComponentView alloc] initWithComponent:self];
         _view.backgroundColor = [UIColor clearColor];
     }
@@ -64,13 +66,36 @@
 }
 
 - (PDViewModel *)getViewModel:(Class)viewModelClass {
-    PDViewModelProvider *viewModelProvider = [self.controller getViewModelProvider];
+    PDViewModelProvider *viewModelProvider = [self getViewModelProvider];
     return [viewModelProvider getViewModel:viewModelClass];
+}
+
+- (PDViewModel *)getSharedViewModelFromAttachedController:(Class)viewModelClass {
+    PDViewModelProvider *viewModelProvider = [self.attachedController getViewModelProvider];
+    return [viewModelProvider getViewModel:viewModelClass];
+}
+
+- (void)willAttachToController:(UIViewController *)newController {
+    self.attachedController = newController;
+    [[self.attachedController getLifecycle] addObserver:self];
+}
+
+- (void)didAttachToController {
+    
+}
+
+- (void)willDetachFromController:(UIViewController *)oldController {
+    
+}
+
+- (void)didDetachFromController {
+    [[self.attachedController getLifecycle] removeObserver:self];
+    self.attachedController = nil;
 }
 
 #pragma mark - Override Methods
 - (UIResponder *)nextResponder {
-    return self.controller.view;
+    return self.attachedController.view;
 }
 
 @end

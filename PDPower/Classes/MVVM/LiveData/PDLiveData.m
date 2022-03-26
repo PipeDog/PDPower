@@ -72,7 +72,7 @@ static id PDLiveDataDefaultValue(void) {
     if (self) {
         _bindValue = PDLiveDataDefaultValue();
         _version = PDLiveDataValueStartVersion;
-        _observerTable = [NSMapTable weakToStrongObjectsMapTable];
+        _observerTable = [NSMapTable strongToStrongObjectsMapTable];
     }
     return self;
 }
