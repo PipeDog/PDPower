@@ -27,14 +27,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSLog(@"111: %s", __FUNCTION__);
+    
     [self.view addSubview:self.button];
 
     self.component = [[PDTestComponent alloc] init];
     [self attachComponent:self.component];
-    
+
+    NSLog(@"222: %s", __FUNCTION__);
+
     PDViewModelProvider *viewModelProvider = [self getViewModelProvider];
     PDTestSharedViewModel *viewModel = [viewModelProvider getViewModel:[PDTestSharedViewModel class]];
     [viewModel doSomething];
+    
+    NSLog(@"333: %s", __FUNCTION__);
 }
 
 - (void)didClickControllerButton:(UIButton *)sender {

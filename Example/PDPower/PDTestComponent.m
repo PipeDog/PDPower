@@ -30,11 +30,24 @@
     return self;
 }
 
+- (void)willAttachToController:(UIViewController *)newController {
+    [super willAttachToController:newController];
+    NSLog(@"555: %s", __FUNCTION__);
+}
+
 - (void)didAttachToController {
     
 }
 
+- (void)onPageDidLoad:(id<PDLifecycleOwner>)lifecycleOwner {
+    NSLog(@"444: %s", __FUNCTION__);
+}
+
 - (void)onPageWillAppear:(id<PDLifecycleOwner>)lifecycleOwner {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)onPageDidAppear:(id<PDLifecycleOwner>)lifecycleOwner {
     NSLog(@"%s", __FUNCTION__);
 }
 

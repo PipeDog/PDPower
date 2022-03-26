@@ -48,13 +48,24 @@
 }
 
 - (void)pd_viewDidLoad {
-    [self pd_viewDidLoad];
-    [self pd_setCurrentState:PDLifecycleStatePageDidLoad];
+    [self pd_executeBlockOnMainThread:^{
+        // 这里调用的两个方法，如果不进行干涉，他们的运行会受到 runLoop 的影响，导致方法的
+        // 执行顺序不符合预期，你可以通过打印日志来进行印证（业务代码中的 - viewDidLoad 方
+        // 法内容会后执行），这里是为了解决 runLoop 带来的影响，因此将他们统一推迟到了下一次
+        // runLoop 去执行
+        [self pd_viewDidLoad];
+        [self pd_setCurrentState:PDLifecycleStatePageDidLoad];
+    }];
 }
 
 - (void)pd_viewWillAppear:(BOOL)animated {
-    [self pd_viewWillAppear:animated];
-    [self pd_setCurrentState:PDLifecycleStatePageWillAppear];
+    // 为了保证 viewDidLoad 与 viewWillAppear: 两个方法的执行顺序，因此这里将
+    // viewWillAppear: 的执行也推迟到了下一次 runLoop，以此来保证 viewWillAppear:
+    // 一定在 viewDidLoad 方法之后执行
+    [self pd_executeBlockOnMainThread:^{
+        [self pd_viewWillAppear:animated];
+        [self pd_setCurrentState:PDLifecycleStatePageWillAppear];
+    }];
 }
 
 - (void)pd_viewDidAppear:(BOOL)animated {
@@ -101,6 +112,16 @@
 - (void)pd_setCurrentState:(PDLifecycleState)state {
     PDLifecycle *lifecycle = [self getLifecycle];
     [lifecycle setCurrentState:state];
+}
+
+- (void)pd_executeBlockOnMainThread:(dispatch_block_t)block {
+    // 这里的主要目的并不是切换线程，而是为了让任务在下一次 runLoop 中执行
+    [self performSelector:@selector(pd_executeBlock:)
+                 onThread:[NSThread mainThread] withObject:[block copy] waitUntilDone:NO];
+}
+
+- (void)pd_executeBlock:(dispatch_block_t)block {
+    if (block) block();
 }
 
 @end
