@@ -9,41 +9,54 @@
 #import "PDLiveData.h"
 #import "PDLiveData+Internal.h"
 
-@interface PDMediatorLiveDataSource : NSObject <PDLiveDataObserver>
+@interface PDMediatorLiveDataSource : NSObject
 
 @property (nonatomic, weak) PDLiveData *liveData;
-@property (nonatomic, weak) id<PDLiveDataObserver> observer;
+@property (nonatomic, copy) void (^observer)(id);
 @property (nonatomic, assign) NSInteger version;
+@property (nonatomic, copy) void (^onChangedBlock)(id);
 
 @end
 
 @implementation PDMediatorLiveDataSource
 
-- (instancetype)initWithLiveData:(PDLiveData *)liveData observer:(id<PDLiveDataObserver>)observer {
+- (instancetype)initWithLiveData:(PDLiveData *)liveData observer:(void (^)(id))observer {
     self = [super init];
     if (self) {
         _version = PDLiveDataValueStartVersion;
         _liveData = liveData;
         _observer = observer;
+        
     }
     return self;
 }
 
 - (void)plug {
-    [self.liveData observeForever:self];
+    [self.liveData observeForever:self.onChangedBlock];
 }
 
 - (void)unplug {
-    [self.liveData removeObserver:self];
+    [self.liveData removeObserver:self.onChangedBlock];
 }
 
-- (void)liveData:(PDLiveData *)liveData onChanged:(id)newValue {
-    if (self.version == [self.liveData getVersion]) {
-        return;
+- (void (^)(id))onChangedBlock {
+    if (!_onChangedBlock) {
+        __weak typeof(self) weakSelf = self;
+        _onChangedBlock = ^(id newValue) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (!strongSelf) {
+                return;
+            }
+            
+            if (strongSelf.version == [strongSelf.liveData getVersion]) {
+                return;
+            }
+            
+            strongSelf.version = [strongSelf.liveData getVersion];
+            !strongSelf.observer ?: strongSelf.observer(newValue);
+        };
     }
-    
-    self.version = [self.liveData getVersion];
-    [self.observer liveData:self.liveData onChanged:newValue];
+    return _onChangedBlock;
 }
 
 @end
@@ -65,7 +78,7 @@
 }
 
 #pragma mark - Public Methods
-- (void)addSource:(PDLiveData *)source observer:(id<PDLiveDataObserver>)observer {
+- (void)addSource:(PDLiveData *)source observer:(void (^)(id _Nullable))observer {
     PDMediatorLiveDataSource *existing = [self.sourceMap objectForKey:source];
     PDMediatorLiveDataSource *e = [[PDMediatorLiveDataSource alloc] initWithLiveData:source observer:observer];
     [_sourceMap setObject:e forKey:source];

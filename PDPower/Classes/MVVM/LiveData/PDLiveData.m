@@ -24,11 +24,11 @@ static id PDLiveDataDefaultValue(void) {
 @interface PDObserverWrapper : NSObject
 
 @property (nonatomic, weak) PDLiveData *liveData;
-@property (nonatomic, weak) id<PDLiveDataObserver> observer;
+@property (nonatomic, copy) void (^observer)(id) ;
 @property (nonatomic, assign, getter=isActive) BOOL active;
 @property (nonatomic, assign) NSInteger lastVersion;
 
-- (instancetype)initWithLiveData:(PDLiveData *)liveData observer:(id<PDLiveDataObserver>)observer;
+- (instancetype)initWithLiveData:(PDLiveData *)liveData observer:(void (^)(id))observer;
 - (BOOL)shouldBeActive;
 - (BOOL)isAttachTo:(UIResponder<PDLifecycleOwner> *)lifecycleOwner;
 - (void)detachObserver;
@@ -41,7 +41,7 @@ static id PDLiveDataDefaultValue(void) {
 @property (nonatomic, weak) UIResponder<PDLifecycleOwner> *lifecycleOwner;
 
 - (instancetype)initWithLiveData:(PDLiveData *)liveData
-                        observer:(id<PDLiveDataObserver>)observer
+                        observer:(void (^)(id))observer
                   lifecycleOwner:(UIResponder<PDLifecycleOwner> *)lifecycleOwner;
 
 @end
@@ -55,7 +55,7 @@ static id PDLiveDataDefaultValue(void) {
 @property (nonatomic, assign) NSInteger activeCount;
 @property (nonatomic, assign) NSInteger version;
 @property (nonatomic, strong) id bindValue;
-@property (nonatomic, strong) NSMapTable<id<PDLiveDataObserver>, PDObserverWrapper *> *observerTable;
+@property (nonatomic, strong) NSMapTable<void (^)(id), PDObserverWrapper *> *observerTable;
 @property (nonatomic, assign, getter=isDispatchingValue) BOOL dispatchingValue;
 @property (nonatomic, assign, getter=isDispatchInvalidated) BOOL dispatchInvalidated;
 
@@ -78,7 +78,7 @@ static id PDLiveDataDefaultValue(void) {
 }
 
 #pragma mark - Public Methods
-- (void)observeForever:(id<PDLiveDataObserver>)observer {
+- (void)observeForever:(void (^)(id _Nullable))observer {
     PDObserverWrapper *existing = [self.observerTable objectForKey:observer];
     PDLifecycleAlwaysActiveObserver *wrapper = [[PDLifecycleAlwaysActiveObserver alloc] initWithLiveData:self
                                                                                                 observer:observer];
@@ -96,7 +96,7 @@ static id PDLiveDataDefaultValue(void) {
     [wrapper activeStateChanged:YES];
 }
 
-- (void)observe:(id<PDLiveDataObserver>)observer withLifecycleOwner:(UIResponder<PDLifecycleOwner> *)lifecycleOwner {
+- (void)observe:(void (^)(id _Nullable))observer withLifecycleOwner:(UIResponder<PDLifecycleOwner> *)lifecycleOwner {
     if ([[lifecycleOwner getLifecycle] getCurrentState] == PDLifecycleStatePageDealloc) {
         return;
     }
@@ -124,7 +124,7 @@ static id PDLiveDataDefaultValue(void) {
     }
 }
 
-- (void)removeObserver:(id<PDLiveDataObserver>)observer {
+- (void)removeObserver:(void (^)(id _Nullable))observer {
     PDObserverWrapper *wrapper = [self.observerTable objectForKey:observer];
     if (!wrapper) {
         return;
@@ -136,7 +136,7 @@ static id PDLiveDataDefaultValue(void) {
 }
 
 - (void)removeObservers:(UIResponder<PDLifecycleOwner> *)lifecycleOwner {
-    id<PDLiveDataObserver> observer;
+    void (^observer)(id);
     NSEnumerator *enumerator = self.observerTable.keyEnumerator;
     
     while (observer = [enumerator nextObject]) {
@@ -216,14 +216,14 @@ static id PDLiveDataDefaultValue(void) {
     }
     
     observer.lastVersion = self.version;
-    [observer.observer liveData:self onChanged:self.bindValue];
+    !observer.observer ?: observer.observer(self.bindValue);
 }
 
 @end
 
 @implementation PDObserverWrapper
 
-- (instancetype)initWithLiveData:(PDLiveData *)liveData observer:(id<PDLiveDataObserver>)observer {
+- (instancetype)initWithLiveData:(PDLiveData *)liveData observer:(void (^)(id))observer {
     self = [super init];
     if (self) {
         _lastVersion = PDLiveDataValueStartVersion;
@@ -273,7 +273,7 @@ static id PDLiveDataDefaultValue(void) {
 @implementation PDLifecycleBoundObserver
 
 - (instancetype)initWithLiveData:(PDLiveData *)liveData
-                        observer:(id<PDLiveDataObserver>)observer
+                        observer:(void (^)(id))observer
                   lifecycleOwner:(UIResponder<PDLifecycleOwner> *)lifecycleOwner {
     self = [super initWithLiveData:liveData observer:observer];
     if (self) {

@@ -12,32 +12,21 @@ NS_ASSUME_NONNULL_BEGIN
 @class PDLiveData;
 @protocol PDLifecycleOwner;
 
-#warning 按照 objC 的语法特性，这里设计成 Block 更合适，FIXIT...
-/// LiveData 的监听者协议
-@protocol PDLiveDataObserver <NSObject>
-
-/// LiveData 绑定数据更新回调
-/// @param liveData LiveData 实例，你可以利用这一变量来进行区分具体是哪个数据发生了变化
-/// @param newValue 数据的最新值
-- (void)liveData:(PDLiveData *)liveData onChanged:(id)newValue;
-
-@end
-
 /// LiveData 是一个数据持有者类，可以在给定的生命周期内观察到数据的更新，不要直接使用 PDLiveData，这被做为一个抽象类
 @interface PDLiveData<ValueType> : NSObject
 
 /// 添加永久监听者，不需要关心生命周期，只要绑定的 Value 发生变化，就会通知给 observer
-- (void)observeForever:(id<PDLiveDataObserver>)observer;
+- (void)observeForever:(void (^)(ValueType _Nullable newValue))observer;
 
 /// 添加与生命周期绑定的监听者，当生命周期处于活跃状态时才会将 Value 的变化通知到 observer，如果
 /// 处于非活跃状态，则会等到生命周期切换到活跃状态后将 Value 的变化通知到 observer，需要注意的是，
 /// 当生命周期处于非活跃状态时，数据如果发生多次更新，只会保留最新的一次，中间的数据将会被丢弃
 /// @param observer 监听者
 /// @param lifecycleOwner 生命周期的拥有者，即 UIViewController 实例
-- (void)observe:(id<PDLiveDataObserver>)observer withLifecycleOwner:(UIResponder<PDLifecycleOwner> *)lifecycleOwner;
+- (void)observe:(void (^)(ValueType _Nullable newValue))observer withLifecycleOwner:(UIResponder<PDLifecycleOwner> *)lifecycleOwner;
 
 /// 移除监听者
-- (void)removeObserver:(id<PDLiveDataObserver>)observer;
+- (void)removeObserver:(void (^)(ValueType _Nullable newValue))observer;
 
 /// 移除生命周期所绑定的所有观察者
 - (void)removeObservers:(UIResponder<PDLifecycleOwner> *)lifecycleOwner;

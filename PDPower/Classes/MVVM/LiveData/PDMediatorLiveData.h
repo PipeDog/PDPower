@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PDMediatorLiveData<ValueType> : PDMutableLiveData<ValueType>
 
 /// 开始监听给定的 LiveData，观察者将在 LiveData 的值被改变时调用
-- (void)addSource:(PDLiveData<ValueType> *)source observer:(id<PDLiveDataObserver>)observer;
+- (void)addSource:(PDLiveData<ValueType> *)source observer:(void (^)(ValueType _Nullable newValue))observer;
 
 /// 停止监听 LiveData
 - (void)removeSource:(PDLiveData<ValueType> *)source;

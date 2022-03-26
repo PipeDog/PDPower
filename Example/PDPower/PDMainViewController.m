@@ -14,7 +14,7 @@
 #import "PDComponentViewController.h"
 #import "PDTestSharedViewModel.h"
 
-@interface PDMainViewController () <PDLiveDataObserver>
+@interface PDMainViewController ()
 
 @property (nonatomic, strong) PDMediatorLiveData<NSString *> *mediatorLiveData;
 @property (nonatomic, strong) PDMutableLiveData<NSString *> *liveData1;
@@ -44,16 +44,23 @@
     self.liveData2 = [[PDMutableLiveData alloc] init];
     self.liveData3 = [[PDMutableLiveData alloc] init];
     
-//    [self.liveData1 observe:self withLifecycleOwner:self];
-//    [self.liveData2 observe:self withLifecycleOwner:self];
-//    [self.liveData3 observe:self withLifecycleOwner:self];
+    __weak typeof(self) weakSelf = self;
+    [self.mediatorLiveData addSource:self.liveData1 observer:^(NSString * _Nullable newValue) {
+        [weakSelf.mediatorLiveData setValue:newValue];
+        NSLog(@"111 : newValue = %@", newValue);
+    }];
 
-    [self.mediatorLiveData addSource:self.liveData1 observer:self];
-//    [self.mediatorLiveData addSource:self.liveData2 observer:self];
-//    [self.mediatorLiveData addSource:self.liveData3 observer:self];
-    
-    // 必须要先监听，否则
-    [self.mediatorLiveData observe:self withLifecycleOwner:self];
+    [self.mediatorLiveData addSource:self.liveData2 observer:^(NSString * _Nullable newValue) {
+        NSLog(@"222 : newValue = %@", newValue);
+    }];
+
+    [self.mediatorLiveData addSource:self.liveData3 observer:^(NSString * _Nullable newValue) {
+        NSLog(@"333 : newValue = %@", newValue);
+    }];
+        
+    [self.mediatorLiveData observe:^(NSString * _Nullable newValue) {
+        NSLog(@"newValue = %@", newValue);
+    } withLifecycleOwner:self];
     
     [self.liveData1 setValue:@"liveData1"];
     [self.liveData2 setValue:@"liveData2"];
@@ -74,18 +81,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - PDLiveDataObserver
-
-- (void)liveData:(PDLiveData *)liveData onChanged:(id)newValue {
-    if (liveData == self.liveData1) {
-        NSLog(@"======================================");
-        NSLog(@"newValue => %@", newValue);
-        NSLog(@"self.liveData1 => %@", [self.liveData1 getValue]);
-        NSLog(@"self.liveData2 => %@", [self.liveData2 getValue]);
-        NSLog(@"self.liveData3 => %@", [self.liveData3 getValue]);
-    }
 }
 
 @end
