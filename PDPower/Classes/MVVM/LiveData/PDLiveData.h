@@ -4,6 +4,12 @@
 //
 //  Created by liang on 2022/3/25.
 //
+//  在 LiveData 模块中并没有实现 Jetpack 中提供的数据修改及数据切换切换功能（Transformations），
+//  LiveData 被设计初衷是为了解决 MVVM 的数据更新流转问题，而数据通常都是由 ViewModel 对外提供的，
+//  个人认为，ViewModel 做为数据的提供方，对外开放的数据应该是经过处理之后的直接可用数据，所以数据修
+//  改及数据切换等功能应该在 ViewModel 内部完成，为了防止功能乱用，因此将 Jetpack 中
+//  Transformations.java 提供的 map（数据修改） 及 switchMap（数据切换）在这里移除
+//
 
 #import <Foundation/Foundation.h>
 
