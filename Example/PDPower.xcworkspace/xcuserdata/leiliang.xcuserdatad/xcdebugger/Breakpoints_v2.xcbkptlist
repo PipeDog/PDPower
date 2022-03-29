@@ -39,54 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2C893039-4073-41F2-AABE-B41EA3010C19"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../PDPower/Classes/MVVM/LiveData/PDMediatorLiveData.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "-addSource:observer:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2C893039-4073-41F2-AABE-B41EA3010C19 - 2c2e5cd9f7855ad9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PDMediatorLiveData removeSource:]"
-                  moduleName = "PDPower"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/leiliang/Desktop/Pipedog/PDPower/PDPower/Classes/MVVM/LiveData/PDMediatorLiveData.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "2C893039-4073-41F2-AABE-B41EA3010C19 - b26360b6f64459bc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PDMediatorLiveData addSource:observer:]"
-                  moduleName = "PDPower"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/leiliang/Desktop/Pipedog/PDPower/PDPower/Classes/MVVM/LiveData/PDMediatorLiveData.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "466">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8CC0A72F-31AF-405B-89A4-035D1DCDB641"
             shouldBeEnabled = "No"
             ignoreCount = "0"

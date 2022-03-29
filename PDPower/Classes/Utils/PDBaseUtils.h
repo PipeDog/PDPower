@@ -30,5 +30,4 @@ class_exchangeInstanceMethod(Class aClass, SEL sourceSel, SEL targetSel);
 FOUNDATION_EXPORT void
 class_exchangeClassMethod(Class aClass, SEL sourceSel, SEL targetSel);
 
-
 NS_ASSUME_NONNULL_END
