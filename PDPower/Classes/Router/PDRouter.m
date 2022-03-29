@@ -7,10 +7,11 @@
 //
 
 #import "PDRouter.h"
+#import "PDRouterPlugin.h"
 #import <objc/runtime.h>
 #import <dlfcn.h>
 #import <mach-o/getsect.h>
-#import "PDRouterPlugin.h"
+#import <mach-o/dyld.h>
 
 @interface NSURL (_PDAdd)
 
@@ -123,25 +124,35 @@ static PDRouter *__globalRouter;
 }
 
 - (void)loadPluginWithRegisterHandler:(void (^)(NSString *pluginname, NSString *classname))registerHandler {
-    Dl_info info; dladdr(&__globalRouter, &info);
-    
+    for (uint32_t index = 0; index < _dyld_image_count(); index++) {
 #ifdef __LP64__
-    uint64_t addr = 0; const uint64_t mach_header = (uint64_t)info.dli_fbase;
-    const struct section_64 *section = getsectbynamefromheader_64((void *)mach_header, "__DATA", "pd_exp_plugin");
+        uint64_t addr = 0;
+        const struct mach_header_64 *header = (const struct mach_header_64 *)_dyld_get_image_header(index);
+        const struct section_64 *section = getsectbynamefromheader_64(header, "__DATA", "pd_exp_plugin");
 #else
-    uint32_t addr = 0; const uint32_t mach_header = (uint32_t)info.dli_fbase;
-    const struct section *section = getsectbynamefromheader((void *)mach_header, "__DATA", "pd_exp_plugin");
+        uint32_t addr = 0;
+        const struct mach_header *header = (const struct mach_header *)_dyld_get_image_header(index);
+        const struct section *section = getsectbynamefromheader(header, "__DATA", "pd_exp_plugin");
 #endif
-    
-    if (section == NULL) { return; }
-    
-    for (addr = section->offset; addr < section->offset + section->size; addr += sizeof(PDRouterPluginName)) {
-        PDRouterPluginName *plugin = (PDRouterPluginName *)(mach_header + addr);
-        if (!plugin) { continue; }
         
-        NSString *pluginname = [NSString stringWithUTF8String:plugin->pluginname];
-        NSString *classname = [NSString stringWithUTF8String:plugin->classname];
-        !registerHandler ?: registerHandler(pluginname, classname);
+        if (section == NULL) { continue; }
+        
+        if (header->filetype != MH_OBJECT && header->filetype != MH_EXECUTE && header->filetype != MH_DYLIB) {
+            continue;
+        }
+        
+        for (addr = section->offset; addr < section->offset + section->size; addr += sizeof(PDRouterPluginName)) {
+#ifdef __LP64__
+            PDRouterPluginName *plugin = (PDRouterPluginName *)((uint64_t)header + addr);
+#else
+            PDRouterPluginName *plugin = (PDRouterPluginName *)((uint32_t)header + addr);
+#endif
+            if (!plugin) { continue; }
+            
+            NSString *pluginname = [NSString stringWithUTF8String:plugin->pluginname];
+            NSString *classname = [NSString stringWithUTF8String:plugin->classname];
+            !registerHandler ?: registerHandler(pluginname, classname);
+        }
     }
 }
 

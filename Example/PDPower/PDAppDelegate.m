@@ -7,12 +7,73 @@
 //
 
 #import "PDAppDelegate.h"
+#import <PDRouter.h>
+
+@interface NSURL (_PDAdd)
+
+@property (nonatomic, copy, readonly) NSDictionary<NSString *, NSString *> *queryItems;
+
+@end
+
+@implementation NSURL (_PDAdd)
+
+- (NSDictionary <NSString *, NSString *>*)queryItems {
+    NSURLComponents *components = [NSURLComponents componentsWithString:self.absoluteString];
+    if (!components) { return @{}; }
+    
+    NSArray<NSURLQueryItem *> *queryItems = components.queryItems;
+    if (!queryItems.count) { return @{}; }
+    
+    NSMutableDictionary<NSString *, id> *queryDict = [NSMutableDictionary dictionary];
+    
+    for (NSURLQueryItem *item in queryItems) {
+        if (!item.name.length/* || !item.value*/) continue;
+        [queryDict setValue:item.value forKey:item.name];
+    }
+    return [queryDict copy];
+}
+
+@end
+
+@interface NSString (_PDAdd)
+
+- (NSString *)encodeWithURLQueryAllowedCharacterSet;
+- (BOOL)isValidURL;
+
+@end
+
+@implementation NSString (_PDAdd)
+
+- (NSString *)encodeWithURLQueryAllowedCharacterSet {
+    return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+}
+
+- (BOOL)isValidURL {
+    NSString *regex = @"[a-zA-z]+://[^\\s]*";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    return [predicate evaluateWithObject:self];
+}
+
+@end
 
 @implementation PDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [PDRouter globalRouter];
+    
+    NSString *url = @"pdscheme://open/view/#/page?name=wangwang&age=24.5&url=https://www.baidu.com/#?inner1=value1&inner2=value2";
+    BOOL isValidUrl = [url isValidURL];
+    NSString *result = [url encodeWithURLQueryAllowedCharacterSet];
+    NSURL *URL = [NSURL URLWithString:result];
+    NSDictionary *items = [URL queryItems];
+    
+    NSLog(@"isValidUrl : %zd, result = %@", isValidUrl, result);
+    NSLog(@"URL : %@, items : %@", URL, items);
+    NSLog(@"device version : %@", [UIDevice currentDevice].systemVersion);
+    
     return YES;
 }
 

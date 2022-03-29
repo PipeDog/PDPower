@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PDPower/PDPower.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+PD_EXPORT_PAGE("componentPage", PDComponentViewController)
 
 @interface PDComponentViewController : UIViewController
 

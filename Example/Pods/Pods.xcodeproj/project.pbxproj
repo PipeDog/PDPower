@@ -7,70 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01AEC5F00C070B8DC14FC0C1A486A3F6 /* PDModelKVMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D369846559DDCFDFD833673BF54A2F96 /* PDModelKVMapper.m */; };
-		0360F38C60B4679B5A68EB643617F1B4 /* PDPower.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DFA611533E55F53E45B01BBC6C7635C /* PDPower.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073FD6BDEBA9EC3BCFD3F6D6001A16C5 /* PDUIUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2061BD0997D9DE8711C71415C53FA6C2 /* PDUIUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		09A03633D95ABDB2D1F956A3F7934F11 /* PDLifecycleOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A86396466FFDE11B8F9E68840A129A2 /* PDLifecycleOwner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A0A2A76848430331431FC01BB8533C2 /* Pods-PDPower_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A52ED45A2EAC5E8F187233AB08D981BA /* Pods-PDPower_Tests-dummy.m */; };
-		0A384BD285BCFDCB7FA920122491FC3A /* PDRouterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E675A71332625541A6D6A2ADCBB51A /* PDRouterPlugin.m */; };
-		12E36E90B770E3EA854AD12082479A1D /* PDComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9539D585F1EA325E9BBEFD96DA6C531D /* PDComponent.m */; };
-		133A4CEA2E952A6131D4656F1A2D2B63 /* PDRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DD87DBAC6BDC805F43F3A0691A0ED34 /* PDRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1ABF14DD8BA9C52D06D69BFD30C80337 /* PDMediatorLiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAFBEECFE3D0148A21363F3EBEBC0B2 /* PDMediatorLiveData.m */; };
-		211E25ED57B0283C788724B7B9551911 /* PDBaseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5406F5C11C859337C2402C679235DB43 /* PDBaseUtils.m */; };
-		23E88D405FC498BEA23B91C2CC3C8B17 /* PDUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F5172E495911D49C33F5E55C32BD25E9 /* PDUIUtils.m */; };
+		124B3F029A115173751B66111E25B61D /* PDRouteNodeValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0B72615C6B09ABBE6CF2E9E482FCAF /* PDRouteNodeValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12F676CEB9E8686817D5FEC56A22373D /* PDMutableLiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 48925EA803076E76F00B5776A6E6BC34 /* PDMutableLiveData.m */; };
+		14A86CCA83FB3B5436CA5D1B24CC0748 /* PDMediatorLiveData.h in Headers */ = {isa = PBXBuildFile; fileRef = D814D2551BA808A1EF4EF3165FC85CBF /* PDMediatorLiveData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26954C91F294C5509ECFC0670466AD9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		28411A983060D2E0F4507EEE4078EEFA /* PDLifecycleObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = F65F5AC89E9B5D4FB953468804C80D9B /* PDLifecycleObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3193157A7D759596453098C1461385DF /* PDViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 768E7B5534AA4423A2E7D74607762F5F /* PDViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A823CD8ECD0FBB0FD3DA09F09C05C93 /* PDModelKVMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3C64982406ADE8C6ADA16D1BD68A8B /* PDModelKVMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4729D9F0536C5DA6C5EC9BAD24CD92F2 /* PDViewModelProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 787CB3AAE31BDD524B51CC430A19ECAE /* PDViewModelProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D10F510EEAC7BD44C127A357D1F022C /* PDLifecycleObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DE70952C8279C664F84CB4192C37F7F /* PDLifecycleObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2EC63ECCD3C9C69368478072BA33FCE5 /* UIViewController+PDLifecycle.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87365B63BE6814724F91A12093EEC7 /* UIViewController+PDLifecycle.m */; };
+		302D162ED1EEB3F664B2B27192733B1C /* PDPower-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23073062AADFA5C39A1A97F53E12CB50 /* PDPower-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33191C919118EBCD35573B56492E4B54 /* PDModelKVMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B506F32954B06AB8578BB13AB76C97B /* PDModelKVMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		381FC89183C84AEB5B87DC6AB585A3D1 /* PDSpecialRouterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BE0690D008AD51A357972B7EBE2FA /* PDSpecialRouterPlugin.m */; };
+		39708AE361DCF805C9EB3C5E7C355025 /* PDViewModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B21EE6938D426DB292DBABEE60875 /* PDViewModelStore.m */; };
+		397D6F865FDD3FA79C78270CAD7F5FE0 /* UIViewController+PDLifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = F9AC0D59662AEE072A8555B8DE821904 /* UIViewController+PDLifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D5132E5E27F9686720F3E0D97E80B6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		4344C246866A9CE5AC604A9376E38665 /* PDServiceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D81E96D0F28B8E194E60D951348BA977 /* PDServiceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4511AD7776B8CAC42ECCD56715D97CCB /* PDRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 214B62C29DA0584730A6510AB4F8393F /* PDRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47A4EFB6BF00A6DD70D73D9EDB0BEFE9 /* PDRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCBD0F4C9DE995591E623F76C21AEBB /* PDRouter.m */; };
+		489A18DF158CCAFB2D9E650DAD1C77C7 /* PDRouterPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = DD0BAC4799EBF362E6C60344B36A3D18 /* PDRouterPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492E88BD3A0775C5C6DF837E89B74BE2 /* Pods-PDPower_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA3BA5E849EF59033C9FFF6C6D5E438 /* Pods-PDPower_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49A0A4AAB0621FB33BEF413A2BE11E19 /* Pods-PDPower_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5623539797CF4ED68E6BFC0E33AD56CB /* Pods-PDPower_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4FAFAD462DEA02AA2C7782C603A52E50 /* PDViewModelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE85FF35D5AA1E54C39ADF2863CB2D /* PDViewModelProvider.m */; };
-		51381360A910F11F299EAC27AA7F4563 /* PDViewModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFF291603F4E304159C58600BEC1C2 /* PDViewModelStore.m */; };
-		51CF93EA4B770363D7215E195BD14114 /* UIViewController+PDLifecycle.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD0342E274E5E61CF9E4264617B8A4E /* UIViewController+PDLifecycle.m */; };
-		52E488870619A47E409ED6D71773C1A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		592FD14AF7DC0AAEDDDF8B3FC59EFA96 /* PDClassPropertyInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = AE30EB60EE535135B139E038608584AF /* PDClassPropertyInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61C3DE91F6AEE8478099FA7AF857853A /* PDPower-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1852854D6DFC246D1E8518D5335520E /* PDPower-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		62AB0228FE92E6F67F77D1EAB9430B27 /* PDLifecycleOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC26FA16B17DA618885999DF17EF38A /* PDLifecycleOwner.m */; };
-		69F52DD385F2029CD5A3D3B787FF0511 /* PDLiveData+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = E0092C5DEE55E429175CD770919C79E3 /* PDLiveData+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6B1246C24D109D833FCD8B7F4CE7895A /* PDLifecycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A133E424BCE0797C1497E0AE23934A9 /* PDLifecycle.m */; };
-		6CC36387940E4BF5095E9A7E93D67B4E /* PDViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E09FD912DBA53859A962E1D1F98130A /* PDViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		77427D9C87E030209D7EAC50E99D219C /* PDLifecycleDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 68AD0A9D1953AB69B5083FABE4417DB3 /* PDLifecycleDefinition.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7863617CFA5C9AF67DAA3B8733001DEE /* PDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E27472E8B343FC0EB6169C9027A467 /* PDViewController.m */; };
+		4A94E99BF5BEBBB93DAE15EEFEE32B35 /* PDViewModelStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E322B83D9B7B203DC8D0BE882E71AFA /* PDViewModelStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55653007FD2E49DBA70708AB4CEA0582 /* PDMutableLiveData.h in Headers */ = {isa = PBXBuildFile; fileRef = 16D064CCD60379A372BE8936625D4FB1 /* PDMutableLiveData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		566E6A9E3CBDB0303766F09F3BD01DE1 /* PDLifecycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DDCE710BBC4818F0EAC55264C16689 /* PDLifecycle.m */; };
+		571771871DFFD4026B286570427EB8D8 /* PDUIUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BBFBD1BDA96FB089C133338ECA2D6AC /* PDUIUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CD4497455F41F05B882F8BCA441C43A /* PDPower-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DD927EEE21D76F2895BB25CA90B793 /* PDPower-dummy.m */; };
+		6C6D8E86D18A79F7183025ACA2BA4508 /* PDPower.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D00A70EE4E542FEF1DCAEFBBE13FAA /* PDPower.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D277BE01E1DDBAA20E1AE98E6A130C7 /* PDLifecycleOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = 69D04FA45D76B2E0948534EF5AA1489F /* PDLifecycleOwner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7140FAAE569E8F0900F99BC772636415 /* PDViewModelStoreOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D781ECA4C2BAB5DCB900BEA83E7101D /* PDViewModelStoreOwner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78FDAFE33EC44B8F1F47CA61306E9365 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		7CBC77233E14A2D809AFB324ADAA3830 /* PDViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FCCFF9A6552F0FF494BAFAA66E6581 /* PDViewModel.m */; };
-		8E1FB435FDB10079C75893C3B97BE4F0 /* PDClassPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEBBB870769F3EF56A8991FF4FEFA5A /* PDClassPropertyInfo.m */; };
-		92704CE5E851853323485884B1C5504F /* PDViewModelStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 13EA02D1E5D17FF453E09E0CB2EFD450 /* PDViewModelStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9459BF317451715EC2FA75CE062A8BE9 /* PDServiceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C262EA70AEA803174C03FC2A166499F2 /* PDServiceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9940CEA30F16BDFE34C5C04C278C0065 /* PDLifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AED40ADA669692105BA875695C6D8BA /* PDLifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0A248D8F58602F437CF3206D330EE81 /* PDMutableLiveData.h in Headers */ = {isa = PBXBuildFile; fileRef = D78E85E070CDED8BD3F9887073EF5E3D /* PDMutableLiveData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A1241640D57E149F85D47552620F42FC /* PDMediatorLiveData.h in Headers */ = {isa = PBXBuildFile; fileRef = 788183318DE4B6184530DDFF2DF28CE8 /* PDMediatorLiveData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ACF201C96BB17B1E8C3EA8AA595A67B5 /* PDViewModelStoreOwner.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E10D56CF31AA16444E84D0A4CAE6433 /* PDViewModelStoreOwner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE88F2D22893C88B7B669DD90CE98988 /* PDLiveData.h in Headers */ = {isa = PBXBuildFile; fileRef = E6EAA9F8D37A362A105C703CB5041A93 /* PDLiveData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C246BBDBB65A0489D138AAB4A7CF27CD /* PDRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = C17AE2FCF053B82C1EA2D42FA8BA3B59 /* PDRouter.m */; };
-		C30C425A35B2AA99C271D5F35A03EEDA /* UIViewController+PDLifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = 62C651D90234E9FE379AFF10255B49AA /* UIViewController+PDLifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3938B688A53A02C8C75B940BF80CD49 /* ReplaceMe.h in Headers */ = {isa = PBXBuildFile; fileRef = F62CC967F85DE6F992802E897E0C5B4A /* ReplaceMe.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D5A84D16293DD56E53BFA0EE8ADDD31B /* PDComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C21FB9B06B90326B0BF70074DD3AC21 /* PDComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D76A1D25439743A89AC3FA44AF9E9B8A /* PDBizService.h in Headers */ = {isa = PBXBuildFile; fileRef = 77CADC4907EDD6B96FEAD3F3CD63EA70 /* PDBizService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB6077A2EC9FFE205995819C9476CF2B /* PDMutableLiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 67848BC2684A27A0DF4C9D7B22A46EB8 /* PDMutableLiveData.m */; };
-		EB2CF60432219D1CD8437547D2897AE2 /* PDRouterPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D315F0F0CFD3E09F82C430B3FAAA05 /* PDRouterPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2292E2A5B551E87A2E581A71402C426 /* PDBaseUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 67D28FBA9A65B96CA69A6EE442AF74C0 /* PDBaseUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2EDB2B7575FFC15865D20CE4E474411 /* PDPower-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2852C43E07BA4C8A27563CCB27FDEA6E /* PDPower-dummy.m */; };
-		F5C64EEF17256BFADFE3814F37E6EE10 /* PDServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB289FD8967BD6694EEAEC08E4A6B09A /* PDServiceManager.m */; };
-		F7B41DAC456E7589DD1848449B090EC1 /* PDLiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB87C3D19D8FB528862735371AAD9F8 /* PDLiveData.m */; };
-		FA0460AF5B48D068504F63350E716ED6 /* PDViewModelStoreOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF3E6BC62043F94894947A86C4418C5 /* PDViewModelStoreOwner.m */; };
+		8A0CC00176190FA221BF1C446096540B /* PDComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB51834C9277D1BD1F906B70DF4AF7C /* PDComponent.m */; };
+		91F16BA0F392B17E3DFD8824EFD3D790 /* PDBaseUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 217FF1AEAB10ADC3F8ECC9EA26058FEE /* PDBaseUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		970181A41E26B7A1B031761E1400D0A9 /* PDLiveData.h in Headers */ = {isa = PBXBuildFile; fileRef = 47FF23C011DB81191FB302152D14A94D /* PDLiveData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97EFD12F83CB42CB252B0458A1861F3C /* PDViewModelProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = C1B55305CC1074DBF0C1C8E98EA164E3 /* PDViewModelProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99D382CC177AB9B5BAC1BC579F0E7DDC /* PDLifecycleDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = D9A0CCBE5D40FC2587F3E0BF18AB6C55 /* PDLifecycleDefinition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DE40FC951B01853984843FDDBCE2CC9 /* PDViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D908A3F23B52BCF974C5DA6890DC481 /* PDViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E39D37903CCE9D06691E21A5237A6FD /* PDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7795F4D0C3D50D6393C8BBC931D972FE /* PDViewController.m */; };
+		9F10B098077C64A50D577129B72572C0 /* PDViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A76EFAF3AEF9E7199C8CE74C3FCD833 /* PDViewModel.m */; };
+		AD34F0283932CA653BBEB14BD1C6B458 /* PDBizService.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AE30EF1CED7DB53C9EFA0847C04F08F /* PDBizService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B47AE5F3ED9DFD14EE49DC4AAA51B518 /* PDPowerDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB63076F6E54918A2702B5ED45BFD4C /* PDPowerDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B61C821B4B09C6D16C416CBD8BE50802 /* PDServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F025707DEDDF68CCBE112140665C5799 /* PDServiceManager.m */; };
+		B74A7B7ABC7EC38270ECB5C6B26F6928 /* PDRouterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D682D7F04C2BB3E43D82956A0E721D /* PDRouterPlugin.m */; };
+		B8631BE0D3A415E300774756CD395661 /* PDLifecycleOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = F551115B7084D23A9095B557DDADD766 /* PDLifecycleOwner.m */; };
+		BA8CACD69D78A6A70994C0F99685B06A /* PDLiveData+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 08759E545892C8E1D6A06FEA9F0C2E49 /* PDLiveData+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C278B14F0B7BEB3BBE8791E032098586 /* PDSpecialRouterPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 7439F61EA925B4DD08E9AF226D14ED7F /* PDSpecialRouterPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D19BE8BBEA0E650EA777D47C08032504 /* PDViewModelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D47545B1FE0630137E53D5DDD95D6B88 /* PDViewModelProvider.m */; };
+		D5C920371C06E008E2E0137A335761B6 /* PDClassPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAE7570753B30E51EFE450F27E45173 /* PDClassPropertyInfo.m */; };
+		D6470C772B3D15D8F3FEFB3A3B2C4368 /* PDLiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C178A2BAE1B9F3FE465C2E6A299A4E /* PDLiveData.m */; };
+		D73120263C316406F4A7BFD998BC6004 /* PDComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 11AFE7957E6047B0F37B8D605C1534C1 /* PDComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAB848490C9B5B1BC330D9977AAB9609 /* PDLifecycle.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F31A876DE42AA23A96434FAE1148D1D /* PDLifecycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBE1F601F4550652B32CA2F2381D5A9E /* PDClassPropertyInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 98035319EDBB1EA6A5C57E2FAE4BC026 /* PDClassPropertyInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD6A177D708F89BE81D5525A00410A32 /* PDModelKVMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CA25BCBF9E6B4FC634BD38938E2684 /* PDModelKVMapper.m */; };
+		E1BA8E824E08C585C1E02544340F2D55 /* PDRouterUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = AFE43A649970193540236326105E2DDF /* PDRouterUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB5B6A7EB3CD1613905EBA7A0FB17CBF /* PDUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D56433837E23F42F0E7558B21DEE /* PDUIUtils.m */; };
+		EB987146A05E5A25E63118E272ED161B /* PDViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB9B9D67C17DBA5902232264CAE9A5F /* PDViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1B8B9499921C03C20EBEA059EEA4E80 /* PDBaseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F538FBB9FF080B4BA463FA087BD4532B /* PDBaseUtils.m */; };
+		F6131DE3D0672E24AE91AC666ABD87FD /* PDRouterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AC1D1FCD097BBD3E01D0C7F646A97A /* PDRouterUtils.m */; };
+		F9DA7B5D622D5019F137952B800FF08D /* PDViewModelStoreOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = CD190678259C267BE44A0408A280AA96 /* PDViewModelStoreOwner.m */; };
+		FB3EFE99BD2A3147D8FDD0D40102835B /* PDMediatorLiveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C793528D02D32051EE600B8A658A47 /* PDMediatorLiveData.m */; };
 		FED15C7004737E651BF5573CC59487DE /* Pods-PDPower_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB89A6F8017EF03A4D57342DA03E047 /* Pods-PDPower_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		269A67B22850F54371AA0BEAE518D6C9 /* PBXContainerItemProxy */ = {
+		086206E6A1A4A70736087CBAA32900B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D8F0AC7A415D6544E78BD36185A215B1;
 			remoteInfo = "Pods-PDPower_Example";
 		};
-		811D8E96E5AF39EE44458C2B234C524D /* PBXContainerItemProxy */ = {
+		B3893A4C52C629AEE44F725CF1B22565 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -80,90 +85,95 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0206E9FC399BC90A32D061389DBCECC1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		05D315F0F0CFD3E09F82C430B3FAAA05 /* PDRouterPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDRouterPlugin.h; sourceTree = "<group>"; };
-		0D8149296C9C1577DBD058CFCCE4F99D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		0DB87C3D19D8FB528862735371AAD9F8 /* PDLiveData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDLiveData.m; sourceTree = "<group>"; };
-		1382AF53F12BE18051129B49A17DA4DA /* PDPower.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PDPower.modulemap; sourceTree = "<group>"; };
-		13EA02D1E5D17FF453E09E0CB2EFD450 /* PDViewModelStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDViewModelStore.h; sourceTree = "<group>"; };
-		18BFF291603F4E304159C58600BEC1C2 /* PDViewModelStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDViewModelStore.m; sourceTree = "<group>"; };
+		06DDCE710BBC4818F0EAC55264C16689 /* PDLifecycle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDLifecycle.m; sourceTree = "<group>"; };
+		07AEE9841587D5CF0D1E11F2BC4124C9 /* PDPower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PDPower.release.xcconfig; sourceTree = "<group>"; };
+		08759E545892C8E1D6A06FEA9F0C2E49 /* PDLiveData+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PDLiveData+Internal.h"; sourceTree = "<group>"; };
+		0FE745AF5E4822E6BC8BE0DF51CA5ED5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		11AFE7957E6047B0F37B8D605C1534C1 /* PDComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDComponent.h; sourceTree = "<group>"; };
+		15D682D7F04C2BB3E43D82956A0E721D /* PDRouterPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDRouterPlugin.m; sourceTree = "<group>"; };
+		16D064CCD60379A372BE8936625D4FB1 /* PDMutableLiveData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDMutableLiveData.h; sourceTree = "<group>"; };
+		18AC1D1FCD097BBD3E01D0C7F646A97A /* PDRouterUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDRouterUtils.m; sourceTree = "<group>"; };
 		199982BEB303E13B0CBBA9539A0E3DDA /* Pods-PDPower_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PDPower_Tests.modulemap"; sourceTree = "<group>"; };
+		1B0B72615C6B09ABBE6CF2E9E482FCAF /* PDRouteNodeValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDRouteNodeValidation.h; sourceTree = "<group>"; };
 		1FE14EA58F3CABCDCE74D659B4DFC282 /* Pods-PDPower_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PDPower_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2061BD0997D9DE8711C71415C53FA6C2 /* PDUIUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDUIUtils.h; sourceTree = "<group>"; };
-		2264E55FE872883A8D700693A095D65C /* PDPower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PDPower.release.xcconfig; sourceTree = "<group>"; };
+		214B62C29DA0584730A6510AB4F8393F /* PDRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDRouter.h; sourceTree = "<group>"; };
+		217FF1AEAB10ADC3F8ECC9EA26058FEE /* PDBaseUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDBaseUtils.h; sourceTree = "<group>"; };
+		23073062AADFA5C39A1A97F53E12CB50 /* PDPower-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PDPower-umbrella.h"; sourceTree = "<group>"; };
 		24CCE86B78F7F2243242EE090203EEC2 /* Pods-PDPower_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PDPower_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		2852C43E07BA4C8A27563CCB27FDEA6E /* PDPower-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PDPower-dummy.m"; sourceTree = "<group>"; };
-		2A86396466FFDE11B8F9E68840A129A2 /* PDLifecycleOwner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDLifecycleOwner.h; sourceTree = "<group>"; };
-		2EC26FA16B17DA618885999DF17EF38A /* PDLifecycleOwner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDLifecycleOwner.m; sourceTree = "<group>"; };
+		2AE30EF1CED7DB53C9EFA0847C04F08F /* PDBizService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDBizService.h; sourceTree = "<group>"; };
+		2BCBD0F4C9DE995591E623F76C21AEBB /* PDRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDRouter.m; sourceTree = "<group>"; };
+		2D908A3F23B52BCF974C5DA6890DC481 /* PDViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDViewController.h; sourceTree = "<group>"; };
+		2F31A876DE42AA23A96434FAE1148D1D /* PDLifecycle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDLifecycle.h; sourceTree = "<group>"; };
 		3A128A5C3D5EA96E6706C42032B9A5CD /* Pods-PDPower_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PDPower_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3B3C64982406ADE8C6ADA16D1BD68A8B /* PDModelKVMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDModelKVMapper.h; sourceTree = "<group>"; };
-		3CAFBEECFE3D0148A21363F3EBEBC0B2 /* PDMediatorLiveData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDMediatorLiveData.m; sourceTree = "<group>"; };
-		3E09FD912DBA53859A962E1D1F98130A /* PDViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDViewController.h; sourceTree = "<group>"; };
-		40E677028F18D4A166989C5925D31746 /* PDPower.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PDPower.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		4A133E424BCE0797C1497E0AE23934A9 /* PDLifecycle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDLifecycle.m; sourceTree = "<group>"; };
-		5406F5C11C859337C2402C679235DB43 /* PDBaseUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDBaseUtils.m; sourceTree = "<group>"; };
+		3A76EFAF3AEF9E7199C8CE74C3FCD833 /* PDViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDViewModel.m; sourceTree = "<group>"; };
+		3BB51834C9277D1BD1F906B70DF4AF7C /* PDComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDComponent.m; sourceTree = "<group>"; };
+		3C7B21EE6938D426DB292DBABEE60875 /* PDViewModelStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDViewModelStore.m; sourceTree = "<group>"; };
+		3D781ECA4C2BAB5DCB900BEA83E7101D /* PDViewModelStoreOwner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDViewModelStoreOwner.h; sourceTree = "<group>"; };
+		47FF23C011DB81191FB302152D14A94D /* PDLiveData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDLiveData.h; sourceTree = "<group>"; };
+		48925EA803076E76F00B5776A6E6BC34 /* PDMutableLiveData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDMutableLiveData.m; sourceTree = "<group>"; };
+		49E9C83FD202193EC8C3697C2EC4925D /* PDPower-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PDPower-prefix.pch"; sourceTree = "<group>"; };
 		55F9AAB19F88200E18400402AB4D5B68 /* Pods-PDPower_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PDPower_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		5623539797CF4ED68E6BFC0E33AD56CB /* Pods-PDPower_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PDPower_Tests-umbrella.h"; sourceTree = "<group>"; };
 		57AB2144319C50478A92663A3B7BD460 /* Pods-PDPower_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PDPower_Tests-Info.plist"; sourceTree = "<group>"; };
-		5BF3E6BC62043F94894947A86C4418C5 /* PDViewModelStoreOwner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDViewModelStoreOwner.m; sourceTree = "<group>"; };
-		5DFA611533E55F53E45B01BBC6C7635C /* PDPower.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PDPower.h; path = PDPower/Classes/PDPower.h; sourceTree = "<group>"; };
-		62C651D90234E9FE379AFF10255B49AA /* UIViewController+PDLifecycle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PDLifecycle.h"; sourceTree = "<group>"; };
-		64E27472E8B343FC0EB6169C9027A467 /* PDViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDViewController.m; sourceTree = "<group>"; };
-		67848BC2684A27A0DF4C9D7B22A46EB8 /* PDMutableLiveData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDMutableLiveData.m; sourceTree = "<group>"; };
-		67D28FBA9A65B96CA69A6EE442AF74C0 /* PDBaseUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDBaseUtils.h; sourceTree = "<group>"; };
+		59C793528D02D32051EE600B8A658A47 /* PDMediatorLiveData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDMediatorLiveData.m; sourceTree = "<group>"; };
+		5BB63076F6E54918A2702B5ED45BFD4C /* PDPowerDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDPowerDefine.h; sourceTree = "<group>"; };
+		5DE70952C8279C664F84CB4192C37F7F /* PDLifecycleObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDLifecycleObserver.h; sourceTree = "<group>"; };
+		5E2BE0690D008AD51A357972B7EBE2FA /* PDSpecialRouterPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDSpecialRouterPlugin.m; sourceTree = "<group>"; };
+		609100FA9D3FD269ED9A603F40890389 /* PDPower-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PDPower-Info.plist"; sourceTree = "<group>"; };
 		6816E2069AC2BF9C110F660872F00059 /* Pods-PDPower_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PDPower_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		68AD0A9D1953AB69B5083FABE4417DB3 /* PDLifecycleDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDLifecycleDefinition.h; sourceTree = "<group>"; };
-		6C21FB9B06B90326B0BF70074DD3AC21 /* PDComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDComponent.h; sourceTree = "<group>"; };
-		6DD87DBAC6BDC805F43F3A0691A0ED34 /* PDRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDRouter.h; sourceTree = "<group>"; };
+		69D04FA45D76B2E0948534EF5AA1489F /* PDLifecycleOwner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDLifecycleOwner.h; sourceTree = "<group>"; };
+		6B506F32954B06AB8578BB13AB76C97B /* PDModelKVMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDModelKVMapper.h; sourceTree = "<group>"; };
+		6BBFBD1BDA96FB089C133338ECA2D6AC /* PDUIUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDUIUtils.h; sourceTree = "<group>"; };
+		6E322B83D9B7B203DC8D0BE882E71AFA /* PDViewModelStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDViewModelStore.h; sourceTree = "<group>"; };
+		70AA6901832948A6B28780E2D85F5BB8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		722B1ADD1014D3C61D63BE6A71D5FCFF /* PDPower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PDPower.framework; path = PDPower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		768E7B5534AA4423A2E7D74607762F5F /* PDViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDViewModel.h; sourceTree = "<group>"; };
-		77CADC4907EDD6B96FEAD3F3CD63EA70 /* PDBizService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDBizService.h; sourceTree = "<group>"; };
+		7439F61EA925B4DD08E9AF226D14ED7F /* PDSpecialRouterPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDSpecialRouterPlugin.h; sourceTree = "<group>"; };
+		7795F4D0C3D50D6393C8BBC931D972FE /* PDViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDViewController.m; sourceTree = "<group>"; };
+		77D29F1CCD31D15C800B0ACBA3E4B67D /* PDPower.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PDPower.modulemap; sourceTree = "<group>"; };
 		78173955693D676BF54945C669B5E2C2 /* Pods_PDPower_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PDPower_Tests.framework; path = "Pods-PDPower_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		787CB3AAE31BDD524B51CC430A19ECAE /* PDViewModelProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDViewModelProvider.h; sourceTree = "<group>"; };
-		788183318DE4B6184530DDFF2DF28CE8 /* PDMediatorLiveData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDMediatorLiveData.h; sourceTree = "<group>"; };
-		8AED40ADA669692105BA875695C6D8BA /* PDLifecycle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDLifecycle.h; sourceTree = "<group>"; };
-		8DAE85FF35D5AA1E54C39ADF2863CB2D /* PDViewModelProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDViewModelProvider.m; sourceTree = "<group>"; };
+		7EB9B9D67C17DBA5902232264CAE9A5F /* PDViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDViewModel.h; sourceTree = "<group>"; };
+		7ED7F84E294E15F765FA25E65F7D55E2 /* PDPower.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PDPower.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		84C178A2BAE1B9F3FE465C2E6A299A4E /* PDLiveData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDLiveData.m; sourceTree = "<group>"; };
+		8AD5D56433837E23F42F0E7558B21DEE /* PDUIUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDUIUtils.m; sourceTree = "<group>"; };
 		8DD453CE2BBEC008CE1151848F965A45 /* Pods-PDPower_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PDPower_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8E10D56CF31AA16444E84D0A4CAE6433 /* PDViewModelStoreOwner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDViewModelStoreOwner.h; sourceTree = "<group>"; };
 		8E1D9D580402C79CCB09E834D8CBC54D /* Pods-PDPower_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PDPower_Example.release.xcconfig"; sourceTree = "<group>"; };
 		90697F46F5AD246D7515B890718647C8 /* Pods_PDPower_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PDPower_Example.framework; path = "Pods-PDPower_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		924D54AD0581F0FD7A4C7B67BBD941B0 /* PDPower-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PDPower-prefix.pch"; sourceTree = "<group>"; };
-		9539D585F1EA325E9BBEFD96DA6C531D /* PDComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDComponent.m; sourceTree = "<group>"; };
+		98035319EDBB1EA6A5C57E2FAE4BC026 /* PDClassPropertyInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDClassPropertyInfo.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DA3BA5E849EF59033C9FFF6C6D5E438 /* Pods-PDPower_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PDPower_Example-umbrella.h"; sourceTree = "<group>"; };
-		A1852854D6DFC246D1E8518D5335520E /* PDPower-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PDPower-umbrella.h"; sourceTree = "<group>"; };
+		A4DD927EEE21D76F2895BB25CA90B793 /* PDPower-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PDPower-dummy.m"; sourceTree = "<group>"; };
 		A5001AC94C1024950769947E763BEB6B /* Pods-PDPower_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PDPower_Example-Info.plist"; sourceTree = "<group>"; };
 		A52ED45A2EAC5E8F187233AB08D981BA /* Pods-PDPower_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PDPower_Tests-dummy.m"; sourceTree = "<group>"; };
-		AE30EB60EE535135B139E038608584AF /* PDClassPropertyInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDClassPropertyInfo.h; sourceTree = "<group>"; };
-		AFD0342E274E5E61CF9E4264617B8A4E /* UIViewController+PDLifecycle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PDLifecycle.m"; sourceTree = "<group>"; };
-		BAEBBB870769F3EF56A8991FF4FEFA5A /* PDClassPropertyInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDClassPropertyInfo.m; sourceTree = "<group>"; };
+		AE87365B63BE6814724F91A12093EEC7 /* UIViewController+PDLifecycle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PDLifecycle.m"; sourceTree = "<group>"; };
+		AFE43A649970193540236326105E2DDF /* PDRouterUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDRouterUtils.h; sourceTree = "<group>"; };
 		BCB89A6F8017EF03A4D57342DA03E047 /* Pods-PDPower_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PDPower_Example-dummy.m"; sourceTree = "<group>"; };
-		C17AE2FCF053B82C1EA2D42FA8BA3B59 /* PDRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDRouter.m; sourceTree = "<group>"; };
-		C262EA70AEA803174C03FC2A166499F2 /* PDServiceManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDServiceManager.h; sourceTree = "<group>"; };
+		C1B55305CC1074DBF0C1C8E98EA164E3 /* PDViewModelProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDViewModelProvider.h; sourceTree = "<group>"; };
 		C37741E6433E08F3971A1890B8BC1703 /* Pods-PDPower_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PDPower_Example-frameworks.sh"; sourceTree = "<group>"; };
 		CCE1E37A1F79044F762B4C4BB0A6BFC6 /* Pods-PDPower_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PDPower_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CD190678259C267BE44A0408A280AA96 /* PDViewModelStoreOwner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDViewModelStoreOwner.m; sourceTree = "<group>"; };
 		D0F35A8637E44DCD55C45D6D64DBAB4F /* Pods-PDPower_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PDPower_Example.modulemap"; sourceTree = "<group>"; };
-		D369846559DDCFDFD833673BF54A2F96 /* PDModelKVMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDModelKVMapper.m; sourceTree = "<group>"; };
-		D78E85E070CDED8BD3F9887073EF5E3D /* PDMutableLiveData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDMutableLiveData.h; sourceTree = "<group>"; };
-		DB289FD8967BD6694EEAEC08E4A6B09A /* PDServiceManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDServiceManager.m; sourceTree = "<group>"; };
-		E0092C5DEE55E429175CD770919C79E3 /* PDLiveData+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PDLiveData+Internal.h"; sourceTree = "<group>"; };
-		E33A2292614038C9DEF3EF63399E21F8 /* PDPower-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PDPower-Info.plist"; sourceTree = "<group>"; };
-		E6EAA9F8D37A362A105C703CB5041A93 /* PDLiveData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDLiveData.h; sourceTree = "<group>"; };
-		E8E675A71332625541A6D6A2ADCBB51A /* PDRouterPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDRouterPlugin.m; sourceTree = "<group>"; };
-		F5172E495911D49C33F5E55C32BD25E9 /* PDUIUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDUIUtils.m; sourceTree = "<group>"; };
-		F62CC967F85DE6F992802E897E0C5B4A /* ReplaceMe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ReplaceMe.h; sourceTree = "<group>"; };
-		F65F5AC89E9B5D4FB953468804C80D9B /* PDLifecycleObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDLifecycleObserver.h; sourceTree = "<group>"; };
-		F7A2D70F2BD37958AF0E66F5EC432E21 /* PDPower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PDPower.debug.xcconfig; sourceTree = "<group>"; };
-		F9FCCFF9A6552F0FF494BAFAA66E6581 /* PDViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDViewModel.m; sourceTree = "<group>"; };
+		D47545B1FE0630137E53D5DDD95D6B88 /* PDViewModelProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDViewModelProvider.m; sourceTree = "<group>"; };
+		D5CA25BCBF9E6B4FC634BD38938E2684 /* PDModelKVMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDModelKVMapper.m; sourceTree = "<group>"; };
+		D814D2551BA808A1EF4EF3165FC85CBF /* PDMediatorLiveData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDMediatorLiveData.h; sourceTree = "<group>"; };
+		D81E96D0F28B8E194E60D951348BA977 /* PDServiceManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDServiceManager.h; sourceTree = "<group>"; };
+		D8D00A70EE4E542FEF1DCAEFBBE13FAA /* PDPower.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PDPower.h; path = PDPower/Classes/PDPower.h; sourceTree = "<group>"; };
+		D9A0CCBE5D40FC2587F3E0BF18AB6C55 /* PDLifecycleDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDLifecycleDefinition.h; sourceTree = "<group>"; };
+		DD0BAC4799EBF362E6C60344B36A3D18 /* PDRouterPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PDRouterPlugin.h; sourceTree = "<group>"; };
+		F025707DEDDF68CCBE112140665C5799 /* PDServiceManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDServiceManager.m; sourceTree = "<group>"; };
+		F538FBB9FF080B4BA463FA087BD4532B /* PDBaseUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDBaseUtils.m; sourceTree = "<group>"; };
+		F551115B7084D23A9095B557DDADD766 /* PDLifecycleOwner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDLifecycleOwner.m; sourceTree = "<group>"; };
+		F6F36B95518D8BE282DBCA8BFBD79023 /* PDPower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PDPower.debug.xcconfig; sourceTree = "<group>"; };
+		F9AC0D59662AEE072A8555B8DE821904 /* UIViewController+PDLifecycle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PDLifecycle.h"; sourceTree = "<group>"; };
+		FFAE7570753B30E51EFE450F27E45173 /* PDClassPropertyInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PDClassPropertyInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		54E0EA4B1F0D60925F4CF584124E6C41 /* Frameworks */ = {
+		A436075BBE7A4C972D23A5F5EB22CC4D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52E488870619A47E409ED6D71773C1A1 /* Foundation.framework in Frameworks */,
+				3D5132E5E27F9686720F3E0D97E80B6C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +199,7 @@
 		07746B10BFD50C683C8AD4A87C25A524 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A183AF92C8F22CB7D47FE9159B9E5465 /* PDPower */,
+				33C9D84E062C4603E15B551B1FEC494A /* PDPower */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -210,47 +220,16 @@
 			path = "Target Support Files/Pods-PDPower_Tests";
 			sourceTree = "<group>";
 		};
-		17FAB03348265DD8638B45250B7111D9 /* Lifecycle */ = {
+		1BE36DF90007CCDCC9CF9FBD973DD080 /* KVMapper */ = {
 			isa = PBXGroup;
 			children = (
-				8AED40ADA669692105BA875695C6D8BA /* PDLifecycle.h */,
-				4A133E424BCE0797C1497E0AE23934A9 /* PDLifecycle.m */,
-				68AD0A9D1953AB69B5083FABE4417DB3 /* PDLifecycleDefinition.h */,
-				F65F5AC89E9B5D4FB953468804C80D9B /* PDLifecycleObserver.h */,
-				2A86396466FFDE11B8F9E68840A129A2 /* PDLifecycleOwner.h */,
-				2EC26FA16B17DA618885999DF17EF38A /* PDLifecycleOwner.m */,
-				8E8E0EF9D91093BB94454E636B65235D /* Internal */,
+				98035319EDBB1EA6A5C57E2FAE4BC026 /* PDClassPropertyInfo.h */,
+				FFAE7570753B30E51EFE450F27E45173 /* PDClassPropertyInfo.m */,
+				6B506F32954B06AB8578BB13AB76C97B /* PDModelKVMapper.h */,
+				D5CA25BCBF9E6B4FC634BD38938E2684 /* PDModelKVMapper.m */,
 			);
-			name = Lifecycle;
-			path = Lifecycle;
-			sourceTree = "<group>";
-		};
-		21C21AF1EA13C86B964868769562E343 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				6DD87DBAC6BDC805F43F3A0691A0ED34 /* PDRouter.h */,
-				C17AE2FCF053B82C1EA2D42FA8BA3B59 /* PDRouter.m */,
-				05D315F0F0CFD3E09F82C430B3FAAA05 /* PDRouterPlugin.h */,
-				E8E675A71332625541A6D6A2ADCBB51A /* PDRouterPlugin.m */,
-				F62CC967F85DE6F992802E897E0C5B4A /* ReplaceMe.h */,
-			);
-			name = Router;
-			path = PDPower/Classes/Router;
-			sourceTree = "<group>";
-		};
-		2D3A61BC3ECDB804D0011E757EA01B0A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1382AF53F12BE18051129B49A17DA4DA /* PDPower.modulemap */,
-				2852C43E07BA4C8A27563CCB27FDEA6E /* PDPower-dummy.m */,
-				E33A2292614038C9DEF3EF63399E21F8 /* PDPower-Info.plist */,
-				924D54AD0581F0FD7A4C7B67BBD941B0 /* PDPower-prefix.pch */,
-				A1852854D6DFC246D1E8518D5335520E /* PDPower-umbrella.h */,
-				F7A2D70F2BD37958AF0E66F5EC432E21 /* PDPower.debug.xcconfig */,
-				2264E55FE872883A8D700693A095D65C /* PDPower.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/PDPower";
+			name = KVMapper;
+			path = KVMapper;
 			sourceTree = "<group>";
 		};
 		30A16CC52A80177BA3F9E0BA232BF52F /* Pods-PDPower_Example */ = {
@@ -270,17 +249,33 @@
 			path = "Target Support Files/Pods-PDPower_Example";
 			sourceTree = "<group>";
 		};
-		357C22F7D5B16E1F95C637F6FE37E09C /* Utils */ = {
+		33C9D84E062C4603E15B551B1FEC494A /* PDPower */ = {
 			isa = PBXGroup;
 			children = (
-				67D28FBA9A65B96CA69A6EE442AF74C0 /* PDBaseUtils.h */,
-				5406F5C11C859337C2402C679235DB43 /* PDBaseUtils.m */,
-				2061BD0997D9DE8711C71415C53FA6C2 /* PDUIUtils.h */,
-				F5172E495911D49C33F5E55C32BD25E9 /* PDUIUtils.m */,
-				F4C7327C143DB6A2CB11D1F709B84B0F /* KVMapper */,
+				D8D00A70EE4E542FEF1DCAEFBBE13FAA /* PDPower.h */,
+				4E41795668F42A78DAC89897FB4720A4 /* MVVM */,
+				EC8D5DA53FE6474F20D35B960DFE28DF /* Pod */,
+				D7EB1F9E4F6330355C311D35D909DC67 /* Router */,
+				3BB24E8B573F954E63597C2F5F5625F1 /* Support Files */,
+				EFD8840D2CC053948E950B6F93BCE07E /* Utils */,
 			);
-			name = Utils;
-			path = PDPower/Classes/Utils;
+			name = PDPower;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3BB24E8B573F954E63597C2F5F5625F1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				77D29F1CCD31D15C800B0ACBA3E4B67D /* PDPower.modulemap */,
+				A4DD927EEE21D76F2895BB25CA90B793 /* PDPower-dummy.m */,
+				609100FA9D3FD269ED9A603F40890389 /* PDPower-Info.plist */,
+				49E9C83FD202193EC8C3697C2EC4925D /* PDPower-prefix.pch */,
+				23073062AADFA5C39A1A97F53E12CB50 /* PDPower-umbrella.h */,
+				F6F36B95518D8BE282DBCA8BFBD79023 /* PDPower.debug.xcconfig */,
+				07AEE9841587D5CF0D1E11F2BC4124C9 /* PDPower.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PDPower";
 			sourceTree = "<group>";
 		};
 		46C05698A03AED9403DE0D5D0017B5D9 /* Products */ = {
@@ -293,6 +288,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4E41795668F42A78DAC89897FB4720A4 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				6407B4F18E7B4E57B0FE93602AD82533 /* Lifecycle */,
+				A26D097C23B1501D316D19619FDB97EC /* LiveData */,
+				ABEFDF353D1BB6EFF8D0BDAC0C091809 /* Special */,
+				78E32B8049DE1B092BC3D910EC642D74 /* ViewModel */,
+			);
+			name = MVVM;
+			path = PDPower/Classes/MVVM;
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,81 +308,75 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		704364AA6A62ACF7BEE16BD31758D417 /* ViewModel */ = {
+		5C4AFC49FAE42931964E02C144632B53 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				768E7B5534AA4423A2E7D74607762F5F /* PDViewModel.h */,
-				F9FCCFF9A6552F0FF494BAFAA66E6581 /* PDViewModel.m */,
-				787CB3AAE31BDD524B51CC430A19ECAE /* PDViewModelProvider.h */,
-				8DAE85FF35D5AA1E54C39ADF2863CB2D /* PDViewModelProvider.m */,
-				13EA02D1E5D17FF453E09E0CB2EFD450 /* PDViewModelStore.h */,
-				18BFF291603F4E304159C58600BEC1C2 /* PDViewModelStore.m */,
-				8E10D56CF31AA16444E84D0A4CAE6433 /* PDViewModelStoreOwner.h */,
-				5BF3E6BC62043F94894947A86C4418C5 /* PDViewModelStoreOwner.m */,
-			);
-			name = ViewModel;
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7F545E0620AF5E0A638A427041CDABC7 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				0D8149296C9C1577DBD058CFCCE4F99D /* LICENSE */,
-				40E677028F18D4A166989C5925D31746 /* PDPower.podspec */,
-				0206E9FC399BC90A32D061389DBCECC1 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		8E8E0EF9D91093BB94454E636B65235D /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				62C651D90234E9FE379AFF10255B49AA /* UIViewController+PDLifecycle.h */,
-				AFD0342E274E5E61CF9E4264617B8A4E /* UIViewController+PDLifecycle.m */,
+				F9AC0D59662AEE072A8555B8DE821904 /* UIViewController+PDLifecycle.h */,
+				AE87365B63BE6814724F91A12093EEC7 /* UIViewController+PDLifecycle.m */,
 			);
 			name = Internal;
 			path = Internal;
 			sourceTree = "<group>";
 		};
-		943DF4B40944C1CC805E4020E44C5899 /* MVVM */ = {
+		6407B4F18E7B4E57B0FE93602AD82533 /* Lifecycle */ = {
 			isa = PBXGroup;
 			children = (
-				17FAB03348265DD8638B45250B7111D9 /* Lifecycle */,
-				ED3C986A2194262265A8F01D1162FF63 /* LiveData */,
-				9F8F4162C2E757765F2D975D018DFAA8 /* Relaxed */,
-				704364AA6A62ACF7BEE16BD31758D417 /* ViewModel */,
+				2F31A876DE42AA23A96434FAE1148D1D /* PDLifecycle.h */,
+				06DDCE710BBC4818F0EAC55264C16689 /* PDLifecycle.m */,
+				D9A0CCBE5D40FC2587F3E0BF18AB6C55 /* PDLifecycleDefinition.h */,
+				5DE70952C8279C664F84CB4192C37F7F /* PDLifecycleObserver.h */,
+				69D04FA45D76B2E0948534EF5AA1489F /* PDLifecycleOwner.h */,
+				F551115B7084D23A9095B557DDADD766 /* PDLifecycleOwner.m */,
+				5C4AFC49FAE42931964E02C144632B53 /* Internal */,
 			);
-			name = MVVM;
-			path = PDPower/Classes/MVVM;
+			name = Lifecycle;
+			path = Lifecycle;
 			sourceTree = "<group>";
 		};
-		9F8F4162C2E757765F2D975D018DFAA8 /* Relaxed */ = {
+		78E32B8049DE1B092BC3D910EC642D74 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				77CADC4907EDD6B96FEAD3F3CD63EA70 /* PDBizService.h */,
-				6C21FB9B06B90326B0BF70074DD3AC21 /* PDComponent.h */,
-				9539D585F1EA325E9BBEFD96DA6C531D /* PDComponent.m */,
-				C262EA70AEA803174C03FC2A166499F2 /* PDServiceManager.h */,
-				DB289FD8967BD6694EEAEC08E4A6B09A /* PDServiceManager.m */,
-				3E09FD912DBA53859A962E1D1F98130A /* PDViewController.h */,
-				64E27472E8B343FC0EB6169C9027A467 /* PDViewController.m */,
+				7EB9B9D67C17DBA5902232264CAE9A5F /* PDViewModel.h */,
+				3A76EFAF3AEF9E7199C8CE74C3FCD833 /* PDViewModel.m */,
+				C1B55305CC1074DBF0C1C8E98EA164E3 /* PDViewModelProvider.h */,
+				D47545B1FE0630137E53D5DDD95D6B88 /* PDViewModelProvider.m */,
+				6E322B83D9B7B203DC8D0BE882E71AFA /* PDViewModelStore.h */,
+				3C7B21EE6938D426DB292DBABEE60875 /* PDViewModelStore.m */,
+				3D781ECA4C2BAB5DCB900BEA83E7101D /* PDViewModelStoreOwner.h */,
+				CD190678259C267BE44A0408A280AA96 /* PDViewModelStoreOwner.m */,
 			);
-			name = Relaxed;
-			path = Relaxed;
+			name = ViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		A183AF92C8F22CB7D47FE9159B9E5465 /* PDPower */ = {
+		A26D097C23B1501D316D19619FDB97EC /* LiveData */ = {
 			isa = PBXGroup;
 			children = (
-				5DFA611533E55F53E45B01BBC6C7635C /* PDPower.h */,
-				943DF4B40944C1CC805E4020E44C5899 /* MVVM */,
-				7F545E0620AF5E0A638A427041CDABC7 /* Pod */,
-				21C21AF1EA13C86B964868769562E343 /* Router */,
-				2D3A61BC3ECDB804D0011E757EA01B0A /* Support Files */,
-				357C22F7D5B16E1F95C637F6FE37E09C /* Utils */,
+				47FF23C011DB81191FB302152D14A94D /* PDLiveData.h */,
+				84C178A2BAE1B9F3FE465C2E6A299A4E /* PDLiveData.m */,
+				D814D2551BA808A1EF4EF3165FC85CBF /* PDMediatorLiveData.h */,
+				59C793528D02D32051EE600B8A658A47 /* PDMediatorLiveData.m */,
+				16D064CCD60379A372BE8936625D4FB1 /* PDMutableLiveData.h */,
+				48925EA803076E76F00B5776A6E6BC34 /* PDMutableLiveData.m */,
+				DE817C0E65F5E939106F4EF8D3AACB12 /* Internal */,
 			);
-			name = PDPower;
-			path = ../..;
+			name = LiveData;
+			path = LiveData;
+			sourceTree = "<group>";
+		};
+		ABEFDF353D1BB6EFF8D0BDAC0C091809 /* Special */ = {
+			isa = PBXGroup;
+			children = (
+				2AE30EF1CED7DB53C9EFA0847C04F08F /* PDBizService.h */,
+				11AFE7957E6047B0F37B8D605C1534C1 /* PDComponent.h */,
+				3BB51834C9277D1BD1F906B70DF4AF7C /* PDComponent.m */,
+				D81E96D0F28B8E194E60D951348BA977 /* PDServiceManager.h */,
+				F025707DEDDF68CCBE112140665C5799 /* PDServiceManager.m */,
+				2D908A3F23B52BCF974C5DA6890DC481 /* PDViewController.h */,
+				7795F4D0C3D50D6393C8BBC931D972FE /* PDViewController.m */,
+			);
+			name = Special;
+			path = Special;
 			sourceTree = "<group>";
 		};
 		B8AD0A323CC54196E4007306BCB73E48 /* Targets Support Files */ = {
@@ -398,15 +399,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		D162FF6500A6B29E677D25C9C6893A04 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				E0092C5DEE55E429175CD770919C79E3 /* PDLiveData+Internal.h */,
-			);
-			name = Internal;
-			path = Internal;
-			sourceTree = "<group>";
-		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,66 +407,101 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ED3C986A2194262265A8F01D1162FF63 /* LiveData */ = {
+		D7EB1F9E4F6330355C311D35D909DC67 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				E6EAA9F8D37A362A105C703CB5041A93 /* PDLiveData.h */,
-				0DB87C3D19D8FB528862735371AAD9F8 /* PDLiveData.m */,
-				788183318DE4B6184530DDFF2DF28CE8 /* PDMediatorLiveData.h */,
-				3CAFBEECFE3D0148A21363F3EBEBC0B2 /* PDMediatorLiveData.m */,
-				D78E85E070CDED8BD3F9887073EF5E3D /* PDMutableLiveData.h */,
-				67848BC2684A27A0DF4C9D7B22A46EB8 /* PDMutableLiveData.m */,
-				D162FF6500A6B29E677D25C9C6893A04 /* Internal */,
+				214B62C29DA0584730A6510AB4F8393F /* PDRouter.h */,
+				2BCBD0F4C9DE995591E623F76C21AEBB /* PDRouter.m */,
+				DD0BAC4799EBF362E6C60344B36A3D18 /* PDRouterPlugin.h */,
+				15D682D7F04C2BB3E43D82956A0E721D /* PDRouterPlugin.m */,
+				E8DE5B7BAA4997CF0DBD6F5BF7D2C0A1 /* Easy */,
 			);
-			name = LiveData;
-			path = LiveData;
+			name = Router;
+			path = PDPower/Classes/Router;
 			sourceTree = "<group>";
 		};
-		F4C7327C143DB6A2CB11D1F709B84B0F /* KVMapper */ = {
+		DE817C0E65F5E939106F4EF8D3AACB12 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				AE30EB60EE535135B139E038608584AF /* PDClassPropertyInfo.h */,
-				BAEBBB870769F3EF56A8991FF4FEFA5A /* PDClassPropertyInfo.m */,
-				3B3C64982406ADE8C6ADA16D1BD68A8B /* PDModelKVMapper.h */,
-				D369846559DDCFDFD833673BF54A2F96 /* PDModelKVMapper.m */,
+				08759E545892C8E1D6A06FEA9F0C2E49 /* PDLiveData+Internal.h */,
 			);
-			name = KVMapper;
-			path = KVMapper;
+			name = Internal;
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		E8DE5B7BAA4997CF0DBD6F5BF7D2C0A1 /* Easy */ = {
+			isa = PBXGroup;
+			children = (
+				1B0B72615C6B09ABBE6CF2E9E482FCAF /* PDRouteNodeValidation.h */,
+				AFE43A649970193540236326105E2DDF /* PDRouterUtils.h */,
+				18AC1D1FCD097BBD3E01D0C7F646A97A /* PDRouterUtils.m */,
+				7439F61EA925B4DD08E9AF226D14ED7F /* PDSpecialRouterPlugin.h */,
+				5E2BE0690D008AD51A357972B7EBE2FA /* PDSpecialRouterPlugin.m */,
+			);
+			name = Easy;
+			path = Easy;
+			sourceTree = "<group>";
+		};
+		EC8D5DA53FE6474F20D35B960DFE28DF /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				0FE745AF5E4822E6BC8BE0DF51CA5ED5 /* LICENSE */,
+				7ED7F84E294E15F765FA25E65F7D55E2 /* PDPower.podspec */,
+				70AA6901832948A6B28780E2D85F5BB8 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		EFD8840D2CC053948E950B6F93BCE07E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				217FF1AEAB10ADC3F8ECC9EA26058FEE /* PDBaseUtils.h */,
+				F538FBB9FF080B4BA463FA087BD4532B /* PDBaseUtils.m */,
+				5BB63076F6E54918A2702B5ED45BFD4C /* PDPowerDefine.h */,
+				6BBFBD1BDA96FB089C133338ECA2D6AC /* PDUIUtils.h */,
+				8AD5D56433837E23F42F0E7558B21DEE /* PDUIUtils.m */,
+				1BE36DF90007CCDCC9CF9FBD973DD080 /* KVMapper */,
+			);
+			name = Utils;
+			path = PDPower/Classes/Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		73B72044F9AD8C59F1440C57504D5CBC /* Headers */ = {
+		7CA9196F6889F8479ED4E76452818C00 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2292E2A5B551E87A2E581A71402C426 /* PDBaseUtils.h in Headers */,
-				D76A1D25439743A89AC3FA44AF9E9B8A /* PDBizService.h in Headers */,
-				592FD14AF7DC0AAEDDDF8B3FC59EFA96 /* PDClassPropertyInfo.h in Headers */,
-				D5A84D16293DD56E53BFA0EE8ADDD31B /* PDComponent.h in Headers */,
-				9940CEA30F16BDFE34C5C04C278C0065 /* PDLifecycle.h in Headers */,
-				77427D9C87E030209D7EAC50E99D219C /* PDLifecycleDefinition.h in Headers */,
-				28411A983060D2E0F4507EEE4078EEFA /* PDLifecycleObserver.h in Headers */,
-				09A03633D95ABDB2D1F956A3F7934F11 /* PDLifecycleOwner.h in Headers */,
-				69F52DD385F2029CD5A3D3B787FF0511 /* PDLiveData+Internal.h in Headers */,
-				BE88F2D22893C88B7B669DD90CE98988 /* PDLiveData.h in Headers */,
-				A1241640D57E149F85D47552620F42FC /* PDMediatorLiveData.h in Headers */,
-				3A823CD8ECD0FBB0FD3DA09F09C05C93 /* PDModelKVMapper.h in Headers */,
-				A0A248D8F58602F437CF3206D330EE81 /* PDMutableLiveData.h in Headers */,
-				61C3DE91F6AEE8478099FA7AF857853A /* PDPower-umbrella.h in Headers */,
-				0360F38C60B4679B5A68EB643617F1B4 /* PDPower.h in Headers */,
-				133A4CEA2E952A6131D4656F1A2D2B63 /* PDRouter.h in Headers */,
-				EB2CF60432219D1CD8437547D2897AE2 /* PDRouterPlugin.h in Headers */,
-				9459BF317451715EC2FA75CE062A8BE9 /* PDServiceManager.h in Headers */,
-				073FD6BDEBA9EC3BCFD3F6D6001A16C5 /* PDUIUtils.h in Headers */,
-				6CC36387940E4BF5095E9A7E93D67B4E /* PDViewController.h in Headers */,
-				3193157A7D759596453098C1461385DF /* PDViewModel.h in Headers */,
-				4729D9F0536C5DA6C5EC9BAD24CD92F2 /* PDViewModelProvider.h in Headers */,
-				92704CE5E851853323485884B1C5504F /* PDViewModelStore.h in Headers */,
-				ACF201C96BB17B1E8C3EA8AA595A67B5 /* PDViewModelStoreOwner.h in Headers */,
-				C3938B688A53A02C8C75B940BF80CD49 /* ReplaceMe.h in Headers */,
-				C30C425A35B2AA99C271D5F35A03EEDA /* UIViewController+PDLifecycle.h in Headers */,
+				91F16BA0F392B17E3DFD8824EFD3D790 /* PDBaseUtils.h in Headers */,
+				AD34F0283932CA653BBEB14BD1C6B458 /* PDBizService.h in Headers */,
+				DBE1F601F4550652B32CA2F2381D5A9E /* PDClassPropertyInfo.h in Headers */,
+				D73120263C316406F4A7BFD998BC6004 /* PDComponent.h in Headers */,
+				DAB848490C9B5B1BC330D9977AAB9609 /* PDLifecycle.h in Headers */,
+				99D382CC177AB9B5BAC1BC579F0E7DDC /* PDLifecycleDefinition.h in Headers */,
+				2D10F510EEAC7BD44C127A357D1F022C /* PDLifecycleObserver.h in Headers */,
+				6D277BE01E1DDBAA20E1AE98E6A130C7 /* PDLifecycleOwner.h in Headers */,
+				BA8CACD69D78A6A70994C0F99685B06A /* PDLiveData+Internal.h in Headers */,
+				970181A41E26B7A1B031761E1400D0A9 /* PDLiveData.h in Headers */,
+				14A86CCA83FB3B5436CA5D1B24CC0748 /* PDMediatorLiveData.h in Headers */,
+				33191C919118EBCD35573B56492E4B54 /* PDModelKVMapper.h in Headers */,
+				55653007FD2E49DBA70708AB4CEA0582 /* PDMutableLiveData.h in Headers */,
+				302D162ED1EEB3F664B2B27192733B1C /* PDPower-umbrella.h in Headers */,
+				6C6D8E86D18A79F7183025ACA2BA4508 /* PDPower.h in Headers */,
+				B47AE5F3ED9DFD14EE49DC4AAA51B518 /* PDPowerDefine.h in Headers */,
+				124B3F029A115173751B66111E25B61D /* PDRouteNodeValidation.h in Headers */,
+				4511AD7776B8CAC42ECCD56715D97CCB /* PDRouter.h in Headers */,
+				489A18DF158CCAFB2D9E650DAD1C77C7 /* PDRouterPlugin.h in Headers */,
+				E1BA8E824E08C585C1E02544340F2D55 /* PDRouterUtils.h in Headers */,
+				4344C246866A9CE5AC604A9376E38665 /* PDServiceManager.h in Headers */,
+				C278B14F0B7BEB3BBE8791E032098586 /* PDSpecialRouterPlugin.h in Headers */,
+				571771871DFFD4026B286570427EB8D8 /* PDUIUtils.h in Headers */,
+				9DE40FC951B01853984843FDDBCE2CC9 /* PDViewController.h in Headers */,
+				EB987146A05E5A25E63118E272ED161B /* PDViewModel.h in Headers */,
+				97EFD12F83CB42CB252B0458A1861F3C /* PDViewModelProvider.h in Headers */,
+				4A94E99BF5BEBBB93DAE15EEFEE32B35 /* PDViewModelStore.h in Headers */,
+				7140FAAE569E8F0900F99BC772636415 /* PDViewModelStoreOwner.h in Headers */,
+				397D6F865FDD3FA79C78270CAD7F5FE0 /* UIViewController+PDLifecycle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,12 +526,12 @@
 /* Begin PBXNativeTarget section */
 		42078FC4545BB41CE77699BF4845F6CC /* PDPower */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA1AE35B6818C283AF60D4F527C59873 /* Build configuration list for PBXNativeTarget "PDPower" */;
+			buildConfigurationList = 3DC42FC6A8F02EFF191191A1F7EDB841 /* Build configuration list for PBXNativeTarget "PDPower" */;
 			buildPhases = (
-				73B72044F9AD8C59F1440C57504D5CBC /* Headers */,
-				D1546D63AC8E1A40605CA6E35FC38E3D /* Sources */,
-				54E0EA4B1F0D60925F4CF584124E6C41 /* Frameworks */,
-				FCF2169863FD270D6781DD2C067A7196 /* Resources */,
+				7CA9196F6889F8479ED4E76452818C00 /* Headers */,
+				65CD037DEFFC9769AE5466678B1C4D54 /* Sources */,
+				A436075BBE7A4C972D23A5F5EB22CC4D /* Frameworks */,
+				992C5F790B5B39BA34576EC0801861A5 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -527,7 +554,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				08186BC15EABF0C5A85FB00867C8C9AF /* PBXTargetDependency */,
+				22CCD94A3355F80094322F2BC2EE55A9 /* PBXTargetDependency */,
 			);
 			name = "Pods-PDPower_Tests";
 			productName = "Pods-PDPower_Tests";
@@ -546,7 +573,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				31F5D8F61266761A469C70413DA08174 /* PBXTargetDependency */,
+				6E0FFDEEE56D2F797AF96AD3767CF828 /* PBXTargetDependency */,
 			);
 			name = "Pods-PDPower_Example";
 			productName = "Pods-PDPower_Example";
@@ -590,14 +617,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7A1328EA73E2BB2E193318B1C4A4D6A /* Resources */ = {
+		992C5F790B5B39BA34576EC0801861A5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCF2169863FD270D6781DD2C067A7196 /* Resources */ = {
+		C7A1328EA73E2BB2E193318B1C4A4D6A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -615,6 +642,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		65CD037DEFFC9769AE5466678B1C4D54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B8B9499921C03C20EBEA059EEA4E80 /* PDBaseUtils.m in Sources */,
+				D5C920371C06E008E2E0137A335761B6 /* PDClassPropertyInfo.m in Sources */,
+				8A0CC00176190FA221BF1C446096540B /* PDComponent.m in Sources */,
+				566E6A9E3CBDB0303766F09F3BD01DE1 /* PDLifecycle.m in Sources */,
+				B8631BE0D3A415E300774756CD395661 /* PDLifecycleOwner.m in Sources */,
+				D6470C772B3D15D8F3FEFB3A3B2C4368 /* PDLiveData.m in Sources */,
+				FB3EFE99BD2A3147D8FDD0D40102835B /* PDMediatorLiveData.m in Sources */,
+				DD6A177D708F89BE81D5525A00410A32 /* PDModelKVMapper.m in Sources */,
+				12F676CEB9E8686817D5FEC56A22373D /* PDMutableLiveData.m in Sources */,
+				5CD4497455F41F05B882F8BCA441C43A /* PDPower-dummy.m in Sources */,
+				47A4EFB6BF00A6DD70D73D9EDB0BEFE9 /* PDRouter.m in Sources */,
+				B74A7B7ABC7EC38270ECB5C6B26F6928 /* PDRouterPlugin.m in Sources */,
+				F6131DE3D0672E24AE91AC666ABD87FD /* PDRouterUtils.m in Sources */,
+				B61C821B4B09C6D16C416CBD8BE50802 /* PDServiceManager.m in Sources */,
+				381FC89183C84AEB5B87DC6AB585A3D1 /* PDSpecialRouterPlugin.m in Sources */,
+				EB5B6A7EB3CD1613905EBA7A0FB17CBF /* PDUIUtils.m in Sources */,
+				9E39D37903CCE9D06691E21A5237A6FD /* PDViewController.m in Sources */,
+				9F10B098077C64A50D577129B72572C0 /* PDViewModel.m in Sources */,
+				D19BE8BBEA0E650EA777D47C08032504 /* PDViewModelProvider.m in Sources */,
+				39708AE361DCF805C9EB3C5E7C355025 /* PDViewModelStore.m in Sources */,
+				F9DA7B5D622D5019F137952B800FF08D /* PDViewModelStoreOwner.m in Sources */,
+				2EC63ECCD3C9C69368478072BA33FCE5 /* UIViewController+PDLifecycle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A899D462CCD03AC1B285542B192F6A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -623,47 +679,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D1546D63AC8E1A40605CA6E35FC38E3D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				211E25ED57B0283C788724B7B9551911 /* PDBaseUtils.m in Sources */,
-				8E1FB435FDB10079C75893C3B97BE4F0 /* PDClassPropertyInfo.m in Sources */,
-				12E36E90B770E3EA854AD12082479A1D /* PDComponent.m in Sources */,
-				6B1246C24D109D833FCD8B7F4CE7895A /* PDLifecycle.m in Sources */,
-				62AB0228FE92E6F67F77D1EAB9430B27 /* PDLifecycleOwner.m in Sources */,
-				F7B41DAC456E7589DD1848449B090EC1 /* PDLiveData.m in Sources */,
-				1ABF14DD8BA9C52D06D69BFD30C80337 /* PDMediatorLiveData.m in Sources */,
-				01AEC5F00C070B8DC14FC0C1A486A3F6 /* PDModelKVMapper.m in Sources */,
-				DB6077A2EC9FFE205995819C9476CF2B /* PDMutableLiveData.m in Sources */,
-				F2EDB2B7575FFC15865D20CE4E474411 /* PDPower-dummy.m in Sources */,
-				C246BBDBB65A0489D138AAB4A7CF27CD /* PDRouter.m in Sources */,
-				0A384BD285BCFDCB7FA920122491FC3A /* PDRouterPlugin.m in Sources */,
-				F5C64EEF17256BFADFE3814F37E6EE10 /* PDServiceManager.m in Sources */,
-				23E88D405FC498BEA23B91C2CC3C8B17 /* PDUIUtils.m in Sources */,
-				7863617CFA5C9AF67DAA3B8733001DEE /* PDViewController.m in Sources */,
-				7CBC77233E14A2D809AFB324ADAA3830 /* PDViewModel.m in Sources */,
-				4FAFAD462DEA02AA2C7782C603A52E50 /* PDViewModelProvider.m in Sources */,
-				51381360A910F11F299EAC27AA7F4563 /* PDViewModelStore.m in Sources */,
-				FA0460AF5B48D068504F63350E716ED6 /* PDViewModelStoreOwner.m in Sources */,
-				51CF93EA4B770363D7215E195BD14114 /* UIViewController+PDLifecycle.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		08186BC15EABF0C5A85FB00867C8C9AF /* PBXTargetDependency */ = {
+		22CCD94A3355F80094322F2BC2EE55A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PDPower_Example";
 			target = D8F0AC7A415D6544E78BD36185A215B1 /* Pods-PDPower_Example */;
-			targetProxy = 269A67B22850F54371AA0BEAE518D6C9 /* PBXContainerItemProxy */;
+			targetProxy = 086206E6A1A4A70736087CBAA32900B9 /* PBXContainerItemProxy */;
 		};
-		31F5D8F61266761A469C70413DA08174 /* PBXTargetDependency */ = {
+		6E0FFDEEE56D2F797AF96AD3767CF828 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PDPower;
 			target = 42078FC4545BB41CE77699BF4845F6CC /* PDPower */;
-			targetProxy = 811D8E96E5AF39EE44458C2B234C524D /* PBXContainerItemProxy */;
+			targetProxy = B3893A4C52C629AEE44F725CF1B22565 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -767,9 +796,9 @@
 			};
 			name = Release;
 		};
-		484106244D10040ABED2B778AE346D31 /* Release */ = {
+		3E09CFCB3849526F26019D7E18C43303 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2264E55FE872883A8D700693A095D65C /* PDPower.release.xcconfig */;
+			baseConfigurationReference = 07AEE9841587D5CF0D1E11F2BC4124C9 /* PDPower.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -824,6 +853,36 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8E02DEDEFA1CB8E34643064E03F825F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6F36B95518D8BE282DBCA8BFBD79023 /* PDPower.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PDPower/PDPower-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PDPower/PDPower-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PDPower/PDPower.modulemap";
+				PRODUCT_MODULE_NAME = PDPower;
+				PRODUCT_NAME = PDPower;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -957,36 +1016,6 @@
 			};
 			name = Release;
 		};
-		DE598BD4E53B4CE591318E58A59636B7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7A2D70F2BD37958AF0E66F5EC432E21 /* PDPower.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PDPower/PDPower-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PDPower/PDPower-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PDPower/PDPower.modulemap";
-				PRODUCT_MODULE_NAME = PDPower;
-				PRODUCT_NAME = PDPower;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -999,20 +1028,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		3DC42FC6A8F02EFF191191A1F7EDB841 /* Build configuration list for PBXNativeTarget "PDPower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E02DEDEFA1CB8E34643064E03F825F0 /* Debug */,
+				3E09CFCB3849526F26019D7E18C43303 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
 				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BA1AE35B6818C283AF60D4F527C59873 /* Build configuration list for PBXNativeTarget "PDPower" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE598BD4E53B4CE591318E58A59636B7 /* Debug */,
-				484106244D10040ABED2B778AE346D31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

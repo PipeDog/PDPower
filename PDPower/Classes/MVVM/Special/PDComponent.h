@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PDPowerDefine.h"
 #import "PDViewModel.h"
 #import "PDLifecycleObserver.h"
 
@@ -30,13 +31,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (PDViewModel *)getSharedViewModelFromAttachedController:(Class)viewModelClass;
 
 /// Component 将要被附加到 ViewController
-- (void)willAttachToController:(UIViewController *)newController;
+- (void)willAttachToController:(UIViewController *)newController PD_REQUIRED_INVOKE_SUPER;
 /// Component 已经被附加到 ViewController，一般来说，你可以使用这个方法来代替 - [UIViewController viewDidLoad]
-- (void)didAttachToController;
+- (void)didAttachToController PD_REQUIRED_INVOKE_SUPER;
 /// Component 将要从 ViewController 上剥离
-- (void)willDetachFromController:(UIViewController *)oldController;
+- (void)willDetachFromController:(UIViewController *)oldController PD_REQUIRED_INVOKE_SUPER;
 /// Component 已经从 ViewController 上剥离
-- (void)didDetachFromController;
+- (void)didDetachFromController PD_REQUIRED_INVOKE_SUPER;
 
 @end
 

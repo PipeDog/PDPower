@@ -31,12 +31,21 @@
 #import "PDViewModelStoreOwner.h"
 
 
-// Section: Relaxed
+// Section: Special
 
 #import "PDComponent.h"
 #import "PDViewController.h"
 #import "PDServiceManager.h"
 #import "PDBizService.h"
+
+
+// Section: Router
+
+#import "PDRouter.h"
+#import "PDRouterPlugin.h"
+#import "PDRouterUtils.h"
+#import "PDSpecialRouterPlugin.h"
+#import "PDRouteNodeValidation.h"
 
 
 // Section: Utils

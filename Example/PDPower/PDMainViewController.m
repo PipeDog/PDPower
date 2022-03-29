@@ -14,6 +14,7 @@
 #import "PDComponentViewController.h"
 #import "PDTestSharedViewModel.h"
 #import "PDTestViewController.h"
+#import <PDRouter.h>
 
 @interface PDMainViewController ()
 
@@ -31,6 +32,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [PDRouter globalRouter].navigationController = self.navigationController;
+        
     PDViewModelProvider *viewModelProvider = [self getViewModelProvider];
     PDTestSharedViewModel *viewModel = [viewModelProvider getViewModel:[PDTestSharedViewModel class]];
     [viewModel doSomething];
@@ -77,8 +80,10 @@
 }
 
 - (IBAction)didClickPush:(id)sender {
-    UIViewController *controller = [[PDTestViewController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
+    [[PDRouter globalRouter] openURL:@"pipedog://open/page/test" params:@{@"name": @"xiao", @"age": @18}];
+    
+//    UIViewController *controller = [[PDTestViewController alloc] init];
+//    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

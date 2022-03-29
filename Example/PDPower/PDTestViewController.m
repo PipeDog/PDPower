@@ -92,6 +92,8 @@
     [viewModel doSomething];
     
     NSLog(@"333: %s", __FUNCTION__);
+    
+    NSLog(@"routerParams => name = %@, age = %zd", self.name, self.age);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
