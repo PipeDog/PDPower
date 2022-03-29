@@ -31,6 +31,13 @@
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (!self.userInteractionEnabled ||
+        self.isHidden ||
+        self.alpha <= 0.01f ||
+        ![self pointInside:point withEvent:event]) {
+        return nil;
+    }
+
     __block UIView *responder = nil;
     NSArray<UIView *> *subviews = [self.subviews copy];
     [subviews enumerateObjectsWithOptions:NSEnumerationReverse
