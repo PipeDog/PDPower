@@ -22,7 +22,7 @@
 - (instancetype)initWithLifecycleOwner:(UIResponder<PDLifecycleOwner> *)lifecycleOwner {
     self = [super init];
     if (self) {
-        UIViewController *realLifecycleOwner = PDGetRootViewController(lifecycleOwner);
+        UIViewController *realLifecycleOwner = PDGetViewController(lifecycleOwner);
         if (!realLifecycleOwner) {
             [[NSException exceptionWithName:@"PDLifecycleException"
                                      reason:@"Can not found `UIViewController` instance as `PDLifecycleOwner`!"

@@ -36,7 +36,7 @@
 }
 
 - (void)didAttachToController {
-    
+    [super didAttachToController];
 }
 
 - (void)onPageDidLoad:(id<PDLifecycleOwner>)lifecycleOwner {

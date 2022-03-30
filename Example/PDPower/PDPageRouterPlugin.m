@@ -10,4 +10,8 @@
 
 @implementation PDPageRouterPlugin
 
+- (PDSkip2PageMode)getSkip2PageMode:(NSString *)pagepath withParams:(NSDictionary *)params {
+    return PDSkip2PageModeTransitionPresent | PDSkip2PageModeAnimatedRequired;
+}
+
 @end

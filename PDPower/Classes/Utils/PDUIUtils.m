@@ -17,21 +17,6 @@ UIViewController *PDGetViewController(UIResponder *responder) {
     return nil;
 }
 
-UIViewController * PDGetRootViewController(UIResponder *responder) {
-    UIViewController *controller = PDGetViewController(responder);
-    if (!controller) {
-        return nil;
-    }
-
-    while (controller.parentViewController &&
-           ![controller.parentViewController isKindOfClass:[UINavigationController class]] &&
-           ![controller.parentViewController isKindOfClass:[UITabBarController class]]) {
-        controller = controller.parentViewController;
-    }
-    
-    return controller;
-}
-
 NSArray<UIResponder *> *PDObtainResponderChain(UIResponder *responder) {
     NSMutableArray<UIResponder *> *chain = [NSMutableArray array];
     if (!responder) {
