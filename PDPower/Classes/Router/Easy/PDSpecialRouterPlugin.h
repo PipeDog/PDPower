@@ -52,11 +52,22 @@ typedef NS_OPTIONS(NSInteger, PDSkip2PageMode) {
 /// 页面间的切换，这应该已经满足了你的大部分需求
 @interface PDSpecialRouterPlugin : PDRouterPlugin
 
+/// 路径为 Key，类名为 Value
+@property (nonatomic, copy, readonly) NSDictionary<NSString *, NSString *> *path2ClassMap;
+/// 类名为 Key，路径为 Value，允许多个路径指向同一个类名，但不允许多个类名指向同一路径
+@property (nonatomic, copy, readonly) NSDictionary<NSString *, NSString *> *class2PathMap;
+
 /// 根据页面路径及参数返回转场模式
 /// @param pagepath 页面路径
 /// @param params 路由参数
 /// @return 指定页面转场模式
-- (PDSkip2PageMode)getSkip2PageMode:(NSString *)pagepath withParams:(NSDictionary *)params PD_REQUIRED_OVERRIDE;
+- (PDSkip2PageMode)getSkip2PageMode:(NSString *)pagepath withParams:(NSDictionary *)params;
+
+/// 根据页面路径及参数进行页面跳转
+/// @param pagepath 页面路径
+/// @param params 路由参数
+/// @return 页面跳转结果，YES 成功，NO 失败
+- (BOOL)skip2Page:(NSString *)pagepath withParams:(NSDictionary *)params;
 
 @end
 
