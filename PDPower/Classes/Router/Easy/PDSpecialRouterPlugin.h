@@ -21,7 +21,7 @@ static const PDRoutePageName __pd_exp_page_##classname##__ = {pagepath, #classna
 
 /// 导出页面信息，@eg:
 ///
-/// PD_EXPORT_PAGE(pipedog://open/page/intro, PDIntroViewController)
+/// PD_EXPORT_PAGE("pipedog://open/page/intro", PDIntroViewController)
 /// @interface PDIntroViewController : UIViewController
 ///
 /// @property (nonatomic, copy) NSString *name;
@@ -29,7 +29,7 @@ static const PDRoutePageName __pd_exp_page_##classname##__ = {pagepath, #classna
 ///
 /// @end
 ///
-/// 然后你可以使用注册的 pagepath 做为参数来进行页面跳转，@eg:
+/// 然后你可以使用注册的 pagepath 做为参数来进行页面跳转（会自动将 params 中的值赋值给目标页面的属性），@eg:
 /// [[PDRouter globalRouter] openURL:@"pipedog://open/page/intro" params:@{@"name": @"xiao", @"age": @20}];
 /// 
 #define PD_EXPORT_PAGE(pagepath, classname) __PD_EXPORT_PAGE_EXT(pagepath, classname)
