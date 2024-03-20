@@ -82,6 +82,10 @@
     [self.interceptors addObject:interceptor];
 }
 
+- (BOOL)openURL:(NSString *)urlString {
+    return [self openURL:urlString parameters:nil];
+}
+
 - (BOOL)openURL:(NSString *)urlString parameters:(NSDictionary *)parameters {
     NSMutableArray *interceptors = [NSMutableArray array];
     [interceptors addObjectsFromArray:self.interceptors];

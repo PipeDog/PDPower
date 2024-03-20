@@ -21,16 +21,16 @@
     UIViewController *page = [[clazz alloc] init];
     if (!page) { return NO; }
 
-    // 如果视图控制器遵循了 `PDRouterAutoParamReceiver` 协议，自动解析参数并赋值
-    if ([page conformsToProtocol:@protocol(PDRouterAutoParamReceiver)]) {
-        PDModelSetValuesForProperties(page, chain.request.parameters);
-    }
-    
-    // 如果视图控制器遵循了 `PDRouterManualParamReceiver` 协议，传递参数
-    else if ([page conformsToProtocol:@protocol(PDRouterManualParamReceiver)]) {
+    // 如果视图控制器遵循了 `PDRouterManualParamReceiver` 协议，手动接收参数
+    if ([page conformsToProtocol:@protocol(PDRouterManualParamReceiver)]) {
         [(id<PDRouterManualParamReceiver>)page onRouterParameters:chain.request.parameters];
     }
-    
+
+    // 如果视图控制器遵循了 `PDRouterAutoParamReceiver` 协议，自动解析参数并赋值
+    else if ([page conformsToProtocol:@protocol(PDRouterAutoParamReceiver)]) {
+        PDModelSetValuesForProperties(page, chain.request.parameters);
+    }
+
     // 不接收参数
     else {
         // Do nothing...

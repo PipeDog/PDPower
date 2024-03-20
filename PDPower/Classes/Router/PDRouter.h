@@ -18,15 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
  PD_EXPORT_PAGE("pipedog://open/page/intro", PDIntroViewController)
  
  @interface PDIntroViewController : UIViewController
- @property (nonatomic, copy) NSString *name;
- @property (nonatomic, assign) NSInteger age;
  @end
  ```
  
- 然后可以使用注册的 `pagepath` 作为参数进行页面跳转（会自动将 `parameters` 中的值赋给目标页面的属性），例如：
+ 然后可以使用注册的 `pagepath` 作为参数进行页面跳转，例如：
  
  ```
- [[PDRouter globalRouter] openURL:@"pipedog://open/page/intro" parameters:@{@"name": @"xiao", @"age": @20}];
+ [[PDRouter globalRouter] openURL:@"pipedog://open/page/intro"];
  ```
  */
 #define PD_EXPORT_PAGE(pagePath, className) __PD_EXPORT_PAGE_EXT(pagePath, className)
@@ -52,6 +50,14 @@ NS_ASSUME_NONNULL_BEGIN
  @param interceptor 要添加的拦截器
  */
 - (void)addInterceptor:(id<PDRouterInterceptor>)interceptor;
+
+/**
+ 打开一个 URL 对应的路由
+
+ @param urlString 要打开的 URL 字符串
+ @return 如果路由处理成功返回 YES，否则返回 NO
+ */
+- (BOOL)openURL:(NSString *)urlString;
 
 /**
  打开一个 URL 对应的路由
