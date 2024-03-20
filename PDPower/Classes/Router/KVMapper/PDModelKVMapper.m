@@ -11,7 +11,7 @@
 #import "PDClassPropertyInfo.h"
 
 /// Get the 'NSBlock' class.
-static inline Class PDNSBlockClass() {
+static inline Class PDNSBlockClass(void) {
     static Class cls;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

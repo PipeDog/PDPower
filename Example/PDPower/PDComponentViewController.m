@@ -10,7 +10,7 @@
 #import <PDPower/PDPower.h>
 #import "PDTestSharedViewModel.h"
 
-@interface PDComponentViewController ()
+@interface PDComponentViewController () <PDRouterAutoParamReceiver>
 
 @end
 

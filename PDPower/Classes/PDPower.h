@@ -42,10 +42,9 @@
 // Section: Router
 
 #import "PDRouter.h"
-#import "PDRouterPlugin.h"
-#import "PDRouterUtils.h"
-#import "PDSpecialRouterPlugin.h"
-#import "PDRouteNodeValidation.h"
+#import "PDRouterInterceptor.h"
+#import "PDRouterPageRegistry.h"
+#import "PDRouterParamReceiver.h"
 
 
 // Section: Utils

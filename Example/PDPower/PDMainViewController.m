@@ -32,7 +32,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [PDRouter globalRouter].navigationController = self.navigationController;
+    [PDRouter globalRouter].navigator = self.navigationController;
         
     PDViewModelProvider *viewModelProvider = [self getViewModelProvider];
     PDTestSharedViewModel *viewModel = [viewModelProvider getViewModel:[PDTestSharedViewModel class]];
@@ -80,7 +80,7 @@
 }
 
 - (IBAction)didClickPush:(id)sender {
-    [[PDRouter globalRouter] openURL:@"pipedog://open/page/test" params:@{@"name": @"xiao", @"age": @18}];
+    [[PDRouter globalRouter] openURL:@"pipedog://open/page/test" parameters:@{@"name": @"xiao", @"age": @18}];
     
 //    UIViewController *controller = [[PDTestViewController alloc] init];
 //    [self.navigationController pushViewController:controller animated:YES];

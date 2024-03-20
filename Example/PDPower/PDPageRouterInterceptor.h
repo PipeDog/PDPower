@@ -10,10 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 导出页面跳转路由插件
-PD_EXPORT_PLUGIN(PageRouterPlugin, PDPageRouterPlugin)
-
-@interface PDPageRouterPlugin : PDSpecialRouterPlugin
+@interface PDPageRouterInterceptor : NSObject <PDRouterInterceptor>
 
 @end
 
