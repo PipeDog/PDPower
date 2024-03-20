@@ -28,7 +28,7 @@
 		DD61B91F27EE2A440041B222 /* PDTestSharedViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD61B91E27EE2A440041B222 /* PDTestSharedViewModel.m */; };
 		DD85192A27EEDFD300467D14 /* PDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD85192927EEDFD300467D14 /* PDTestViewController.m */; };
 		DD85192D27EEDFEA00467D14 /* PDTestComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DD85192C27EEDFEA00467D14 /* PDTestComponent.m */; };
-		DD8F931A27F3058D0083DD1D /* PDPageRouterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F931927F3058D0083DD1D /* PDPageRouterPlugin.m */; };
+		DDF354162BAADD2E005D53B7 /* PDLogInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF354152BAADD2E005D53B7 /* PDLogInterceptor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +78,8 @@
 		DD85192927EEDFD300467D14 /* PDTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDTestViewController.m; sourceTree = "<group>"; };
 		DD85192B27EEDFEA00467D14 /* PDTestComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDTestComponent.h; sourceTree = "<group>"; };
 		DD85192C27EEDFEA00467D14 /* PDTestComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDTestComponent.m; sourceTree = "<group>"; };
-		DD8F931827F3058D0083DD1D /* PDPageRouterPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDPageRouterPlugin.h; sourceTree = "<group>"; };
-		DD8F931927F3058D0083DD1D /* PDPageRouterPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDPageRouterPlugin.m; sourceTree = "<group>"; };
+		DDF354142BAADD2E005D53B7 /* PDLogInterceptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDLogInterceptor.h; sourceTree = "<group>"; };
+		DDF354152BAADD2E005D53B7 /* PDLogInterceptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDLogInterceptor.m; sourceTree = "<group>"; };
 		EEF0671725AAFBE536470D56 /* Pods-PDPower_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDPower_Example.debug.xcconfig"; path = "Target Support Files/Pods-PDPower_Example/Pods-PDPower_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F6B73790641231C008E1EC01 /* Pods_PDPower_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDPower_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -215,7 +215,7 @@
 		DD61B91927EE29DD0041B222 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				DD8F931727F305710083DD1D /* RouterPlugin */,
+				DDF354132BAADD1E005D53B7 /* Interceptor */,
 				DD85192727EEDFC400467D14 /* Component */,
 				DD61B91A27EE29F40041B222 /* PDComponentViewController.h */,
 				DD61B91B27EE29F40041B222 /* PDComponentViewController.m */,
@@ -236,13 +236,13 @@
 			name = Component;
 			sourceTree = "<group>";
 		};
-		DD8F931727F305710083DD1D /* RouterPlugin */ = {
+		DDF354132BAADD1E005D53B7 /* Interceptor */ = {
 			isa = PBXGroup;
 			children = (
-				DD8F931827F3058D0083DD1D /* PDPageRouterPlugin.h */,
-				DD8F931927F3058D0083DD1D /* PDPageRouterPlugin.m */,
+				DDF354142BAADD2E005D53B7 /* PDLogInterceptor.h */,
+				DDF354152BAADD2E005D53B7 /* PDLogInterceptor.m */,
 			);
-			name = RouterPlugin;
+			name = Interceptor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,9 +413,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD8F931A27F3058D0083DD1D /* PDPageRouterPlugin.m in Sources */,
 				DD61B91C27EE29F40041B222 /* PDComponentViewController.m in Sources */,
 				6003F59E195388D20070C39A /* PDAppDelegate.m in Sources */,
+				DDF354162BAADD2E005D53B7 /* PDLogInterceptor.m in Sources */,
 				DD85192A27EEDFD300467D14 /* PDTestViewController.m in Sources */,
 				DD61B91F27EE2A440041B222 /* PDTestSharedViewModel.m in Sources */,
 				6003F5A7195388D20070C39A /* PDMainViewController.m in Sources */,

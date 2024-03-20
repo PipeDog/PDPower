@@ -8,6 +8,7 @@
 
 #import "PDAppDelegate.h"
 #import <PDRouter.h>
+#import "PDLogInterceptor.h"
 
 @interface NSURL (_PDAdd)
 
@@ -62,7 +63,7 @@
 {
     // Override point for customization after application launch.
     
-    [PDRouter globalRouter];
+    [[PDRouter globalRouter] addInterceptor:[[PDLogInterceptor alloc] init]];
     
     NSString *url = @"pdscheme://open/view/#/page?name=wangwang&age=24.5&url=https://www.baidu.com/#?inner1=value1&inner2=value2";
     BOOL isValidUrl = [url isValidURL];
@@ -70,7 +71,7 @@
     NSURL *URL = [NSURL URLWithString:result];
     NSDictionary *items = [URL queryItems];
     
-    NSLog(@"isValidUrl : %zd, result = %@", isValidUrl, result);
+    NSLog(@"isValidUrl : %d, result = %@", isValidUrl, result);
     NSLog(@"URL : %@, items : %@", URL, items);
     NSLog(@"device version : %@", [UIDevice currentDevice].systemVersion);
     
