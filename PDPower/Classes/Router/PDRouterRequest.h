@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  路由请求的参数字典
  */
-@property (nonatomic, strong, readonly) NSDictionary *parameters;
+@property (nonatomic, strong, readonly, nullable) NSDictionary<NSString *, id> *parameters;
 
 /**
  使用指定的 URL 字符串和参数字典初始化 `PDRouterRequest` 实例
@@ -32,7 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 初始化后的 `PDRouterRequest` 实例
  */
-- (instancetype)initWithURLString:(NSString *)urlString parameters:(NSDictionary * _Nullable)parameters;
+- (instancetype)initWithURLString:(NSString *)urlString
+                       parameters:(nullable NSDictionary<NSString *, id> *)parameters;
 
 @end
 

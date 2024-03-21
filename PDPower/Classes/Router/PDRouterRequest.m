@@ -9,7 +9,8 @@
 
 @implementation PDRouterRequest
 
-- (instancetype)initWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters {
+- (instancetype)initWithURLString:(NSString *)urlString
+                       parameters:(NSDictionary<NSString *,id> *)parameters {
     self = [super init];
     if (self) {
         _urlString = [urlString copy];

@@ -1,11 +1,11 @@
 //
-//  PDModelKVMapper.m
-//  PDModelKVMapper
+//  PDObjectPropertyMapper.m
+//  PDObjectPropertyMapper
 //
 //  Created by liang on 2020/11/24.
 //
 
-#import "PDModelKVMapper.h"
+#import "PDObjectPropertyMapper.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "PDClassPropertyInfo.h"
@@ -24,7 +24,7 @@ static inline Class PDNSBlockClass(void) {
     return cls; // current is "NSBlock"
 }
 
-static inline void PDModelSetNumberToProperty(__unsafe_unretained id model,
+static inline void PDObjectSetNumberToProperty(__unsafe_unretained id model,
                                               __unsafe_unretained NSNumber *num,
                                               __unsafe_unretained PDClassPropertyInfo *propertyInfo) {
     switch (propertyInfo.type & PDEncodingTypeMask) {
@@ -82,10 +82,10 @@ static inline void PDModelSetNumberToProperty(__unsafe_unretained id model,
     }
 }
 
-@implementation PDModelKVMapper
+@implementation PDObjectPropertyMapper
 
-+ (PDModelKVMapper *)defaultMapper {
-    static PDModelKVMapper *__defaultMapper;
++ (PDObjectPropertyMapper *)defaultMapper {
+    static PDObjectPropertyMapper *__defaultMapper;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         __defaultMapper = [[self alloc] init];
@@ -93,23 +93,33 @@ static inline void PDModelSetNumberToProperty(__unsafe_unretained id model,
     return __defaultMapper;
 }
 
-- (void)mapKeyValuePairs:(NSDictionary<NSString *,id> *)pairs toModel:(id)model {
-    if (!pairs.count || !model) { return; }
+- (void)mapKeyValuePairs:(NSDictionary<NSString *,id> *)keyValuePairs toObject:(id)object {
+    [self mapKeyValuePairs:keyValuePairs toObject:object mapperBlock:nil];
+}
+
+- (void)mapKeyValuePairs:(NSDictionary<NSString *,id> *)keyValuePairs 
+                toObject:(id)object
+             mapperBlock:(PDObjectPropertyMapperBlock)block {
+    if (!keyValuePairs.count || !object) { return; }
     
-    NSDictionary<PDModelDataSourceName, PDModelPropertyName> *propertyMapper;
-    if ([[model class] respondsToSelector:@selector(modelCustomPropertyNameMapper)]) {
-        propertyMapper = [[model class] modelCustomPropertyNameMapper];
+    NSDictionary<PDObjectParameterKey, PDObjectPropertyName> *propertyMapper;
+    if (block) {
+        propertyMapper = block();
+    } else if ([[object class] conformsToProtocol:@protocol(PDObjectPropertyMappingProtocol)]) {
+        propertyMapper = [[object class] objectCustomPropertyMapper];
+    } else {
+        // Do nothing...
     }
 
-    [pairs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        PDModelPropertyName propertyName = propertyMapper[key] ?: key;
-        [self setValue:obj forProperty:propertyName toModel:model];
+    [keyValuePairs enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        PDObjectPropertyName propertyName = propertyMapper[key] ?: key;
+        [self setValue:obj forProperty:propertyName toObject:object];
     }];
 }
 
 #pragma mark - Tool Methods
-- (void)setValue:(id)value forProperty:(PDModelPropertyName)propertyName toModel:(id)model {
-    NSString *className = NSStringFromClass([model class]);
+- (void)setValue:(id)value forProperty:(PDObjectPropertyName)propertyName toObject:(id)object {
+    NSString *className = NSStringFromClass([object class]);
     PDClassPropertyInfo *propertyInfo = [PDClassPropertyInfo propertyInfoWithClass:className property:propertyName];
     if (!propertyInfo) {
         NSString *info = [NSString stringWithFormat:@"Can not match property name = `%@` in class `%@`!",
@@ -137,11 +147,11 @@ static inline void PDModelSetNumberToProperty(__unsafe_unretained id model,
         case PDEncodingTypeFloat:
         case PDEncodingTypeDouble:
         case PDEncodingTypeLongDouble: {
-            PDModelSetNumberToProperty(model, (NSNumber *)value, propertyInfo);
+            PDObjectSetNumberToProperty(object, (NSNumber *)value, propertyInfo);
         } break;
         
         case PDEncodingTypeObject: {
-            ((void (*)(id, SEL, id))(void *) objc_msgSend)((id)model, propertyInfo.setter, value);
+            ((void (*)(id, SEL, id))(void *) objc_msgSend)((id)object, propertyInfo.setter, value);
         } break;
         
         case PDEncodingTypeClass: {
@@ -149,13 +159,13 @@ static inline void PDModelSetNumberToProperty(__unsafe_unretained id model,
             if ([value isKindOfClass:[NSString class]]) {
                 cls = NSClassFromString(value);
                 if (cls) {
-                    ((void (*)(id, SEL, Class))(void *) objc_msgSend)((id)model, propertyInfo.setter, (Class)cls);
+                    ((void (*)(id, SEL, Class))(void *) objc_msgSend)((id)object, propertyInfo.setter, (Class)cls);
                 }
             } else {
                 cls = object_getClass(value);
                 if (cls) {
                     if (class_isMetaClass(cls)) {
-                        ((void (*)(id, SEL, Class))(void *) objc_msgSend)((id)model, propertyInfo.setter, (Class)value);
+                        ((void (*)(id, SEL, Class))(void *) objc_msgSend)((id)object, propertyInfo.setter, (Class)value);
                     }
                 }
             }
@@ -164,7 +174,7 @@ static inline void PDModelSetNumberToProperty(__unsafe_unretained id model,
         case PDEncodingTypeSEL: {
             if ([value isKindOfClass:[NSString class]]) {
                 SEL sel = NSSelectorFromString(value);
-                if (sel) ((void (*)(id, SEL, SEL))(void *) objc_msgSend)((id)model, propertyInfo.setter, (SEL)sel);
+                if (sel) ((void (*)(id, SEL, SEL))(void *) objc_msgSend)((id)object, propertyInfo.setter, (SEL)sel);
             } else {
                 PDDataTypeMatchFailedAsset();
             }
@@ -172,7 +182,7 @@ static inline void PDModelSetNumberToProperty(__unsafe_unretained id model,
             
         case PDEncodingTypeBlock: {
             if ([value isKindOfClass:PDNSBlockClass()]) {
-                ((void (*)(id, SEL, void (^)(void)))(void *) objc_msgSend)((id)model, propertyInfo.setter, (void (^)(void))value);
+                ((void (*)(id, SEL, void (^)(void)))(void *) objc_msgSend)((id)object, propertyInfo.setter, (void (^)(void))value);
             } else {
                 PDDataTypeMatchFailedAsset();
             }
@@ -183,7 +193,7 @@ static inline void PDModelSetNumberToProperty(__unsafe_unretained id model,
                 const char *valueType = ((NSValue *)value).objCType;
                 const char *metaType = propertyInfo.typeEncoding.UTF8String;
                 if (valueType && metaType && strcmp(valueType, metaType) == 0) {
-                    [model setValue:value forKey:propertyInfo.name];
+                    [object setValue:value forKey:propertyInfo.name];
                 }
             } else {
                 PDDataTypeMatchFailedAsset();
@@ -193,22 +203,26 @@ static inline void PDModelSetNumberToProperty(__unsafe_unretained id model,
         case PDEncodingTypeCString: {
             if ([value isKindOfClass:[NSString class]]) {
                 NSString *string = (NSString *)value;
-                ((void (*)(id, SEL, const char *))(void *) objc_msgSend)((id)model, propertyInfo.setter, [string UTF8String]);
+                ((void (*)(id, SEL, const char *))(void *) objc_msgSend)((id)object, propertyInfo.setter, [string UTF8String]);
             } else {
                 PDDataTypeMatchFailedAsset();
             }
         } break;
             
         default: {
-            PDEncodingType type = (propertyInfo.type & PDEncodingTypeMask);
-            NSString *info = [NSString stringWithFormat:@"Unsupported data type = `%zd`!", type];
-            NSAssert(NO, info);
+            @try {
+                [object setValue:value forKey:propertyName];
+            } @catch (NSException *exception) {
+                PDEncodingType type = (propertyInfo.type & PDEncodingTypeMask);
+                NSString *info = [NSString stringWithFormat:@"Unsupported data type = `%zd`!", type];
+                NSAssert(NO, info);
+            }
         } break;
     }
 }
 
 @end
 
-void PDModelSetValuesForProperties(id model, NSDictionary<NSString *, id> *pairs) {
-    [[PDModelKVMapper defaultMapper] mapKeyValuePairs:pairs toModel:model];
+void PDObjectSetPropertyValues(id object, NSDictionary<NSString *, id> *keyValuePairs) {
+    [[PDObjectPropertyMapper defaultMapper] mapKeyValuePairs:keyValuePairs toObject:object];
 }

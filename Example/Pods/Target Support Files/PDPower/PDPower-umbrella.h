@@ -30,7 +30,7 @@
 #import "PDPower.h"
 #import "PDPageNavigationInterceptor.h"
 #import "PDClassPropertyInfo.h"
-#import "PDModelKVMapper.h"
+#import "PDObjectPropertyMapper.h"
 #import "PDRouter.h"
 #import "PDRouterInterceptor.h"
 #import "PDRouterPageRegistry.h"

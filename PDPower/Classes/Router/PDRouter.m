@@ -86,7 +86,7 @@
     return [self openURL:urlString parameters:nil];
 }
 
-- (BOOL)openURL:(NSString *)urlString parameters:(NSDictionary *)parameters {
+- (BOOL)openURL:(NSString *)urlString parameters:(NSDictionary<NSString *,id> *)parameters {
     NSMutableArray *interceptors = [NSMutableArray array];
     [interceptors addObjectsFromArray:self.interceptors];
     [interceptors addObject:[[PDPageNavigationInterceptor alloc] init]];

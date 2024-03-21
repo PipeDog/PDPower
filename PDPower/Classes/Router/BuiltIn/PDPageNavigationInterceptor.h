@@ -5,7 +5,7 @@
 //  Created by liang on 2024/3/20.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "PDRouterInterceptor.h"
 
 NS_ASSUME_NONNULL_BEGIN

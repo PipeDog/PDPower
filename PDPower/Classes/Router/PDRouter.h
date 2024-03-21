@@ -5,7 +5,7 @@
 //  Created by liang on 2024/3/19.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "PDRouterInterceptor.h"
 #import "PDRouterPageRegistry.h"
 
@@ -66,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param parameters 传递给目标页面的参数
  @return 如果路由处理成功返回 YES，否则返回 NO
  */
-- (BOOL)openURL:(NSString *)urlString parameters:(NSDictionary * _Nullable)parameters;
+- (BOOL)openURL:(NSString *)urlString parameters:(NSDictionary<NSString *, id> * _Nullable)parameters;
 
 @end
 
