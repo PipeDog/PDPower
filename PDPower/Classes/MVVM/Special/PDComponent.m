@@ -72,12 +72,12 @@
     return self;
 }
 
-- (PDViewModel *)getViewModel:(Class)viewModelClass {
+- (__kindof PDViewModel *)getViewModel:(Class)viewModelClass {
     PDViewModelProvider *viewModelProvider = [self getViewModelProvider];
     return [viewModelProvider getViewModel:viewModelClass];
 }
 
-- (PDViewModel *)getSharedViewModelFromAttachedController:(Class)viewModelClass {
+- (__kindof PDViewModel *)getSharedViewModelFromAttachedController:(Class)viewModelClass {
     PDViewModelProvider *viewModelProvider = [self.attachedController getViewModelProvider];
     return [viewModelProvider getViewModel:viewModelClass];
 }

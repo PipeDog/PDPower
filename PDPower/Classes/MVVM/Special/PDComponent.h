@@ -25,10 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UIView *view;
 
 /// 根据给定 Class 获取 ViewModel 对象
-- (PDViewModel *)getViewModel:(Class)viewModelClass;
+- (__kindof PDViewModel *)getViewModel:(Class)viewModelClass;
 
 /// 根据给定 Class 获取依赖的 ViewController 所共享的 ViewModel 对象
-- (PDViewModel *)getSharedViewModelFromAttachedController:(Class)viewModelClass;
+- (__kindof PDViewModel *)getSharedViewModelFromAttachedController:(Class)viewModelClass;
 
 /// Component 将要被附加到 ViewController
 - (void)willAttachToController:(UIViewController *)newController PD_REQUIRED_INVOKE_SUPER;

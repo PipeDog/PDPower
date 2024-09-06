@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)detachComponent:(PDComponent *)component;
 
 /// 获取 ViewModel 对象
-- (PDViewModel *)getViewModel:(Class)viewModelClass;
+- (__kindof PDViewModel *)getViewModel:(Class)viewModelClass;
 
 @end
 

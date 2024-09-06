@@ -50,11 +50,12 @@
     
     NSArray *constraints = [self.layoutMapTable objectForKey:component];
     [NSLayoutConstraint deactivateConstraints:constraints];
+    [self.layoutMapTable removeObjectForKey:component];
     
     [component didDetachFromController];
 }
 
-- (PDViewModel *)getViewModel:(Class)viewModelClass {
+- (__kindof PDViewModel *)getViewModel:(Class)viewModelClass {
     PDViewModelProvider *viewModelProvider = [self getViewModelProvider];
     return [viewModelProvider getViewModel:viewModelClass];
 }
